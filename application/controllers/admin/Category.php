@@ -32,10 +32,6 @@ class Category extends Admin_Controller
 	{
 
 		$this->form_validation->set_rules('txtName', 'Name', 'trim|required');
-		// $this->form_validation->set_rules('txtIndustryName', 'Name', 'trim|required');
-		// if (empty($_FILES['categoryImage']['name'])){
-		// 	$this->form_validation->set_rules('categoryImage', 'Image', 'required');
-		// }
 		
         if ($this->form_validation->run() == TRUE) {
             // true case
@@ -49,12 +45,9 @@ class Category extends Admin_Controller
 			
 			$data = array(
         		'name' => $this->input->post('txtName'),
-        		// 'industry' => $this->input->post('txtIndustryName'),
         		'desc' => $this->input->post('txtShortDesc'),
-        		// 'parentid' => $this->atri->de($this->input->post('hdnparentcatid')),
         		'status' => 'Y',
         		'url_key' => '',
-        		// 'flagdisplayinhomepage' => $this->input->post('flagdisplayinhome')
         	);
 
 			

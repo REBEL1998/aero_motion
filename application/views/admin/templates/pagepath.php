@@ -8,5 +8,3 @@
               <li class="breadcrumb-item active">Main</li>
           </ol>
       </div> -->
-  </div>
-  <!-- [ content ] End -->

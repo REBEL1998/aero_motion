@@ -108,9 +108,9 @@ class Admin_Controller extends MY_Controller
 			$this->data['arrUserAccess'] = !empty($arrUserData[0]["access"]) ? json_decode($arrUserData[0]["access"], true) : [];
 		}
 		
-		if( in_array($this->uri->segment(2), array_keys($this->data['arrAdminPages'])) && !in_array($this->uri->segment(2),$this->data['arrUserAccess']) ) {
-			redirect(base_url('admin/auth/logout'), 'refresh');
-		}
+		// if( in_array($this->uri->segment(2), array_keys($this->data['arrAdminPages'])) && !in_array($this->uri->segment(2),$this->data['arrUserAccess']) ) {
+		// 	redirect(base_url('admin/auth/logout'), 'refresh');
+		// }
 		#####  USER ACCESS CHECK - START #####
 
 	}

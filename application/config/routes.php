@@ -71,25 +71,9 @@ $route['translate_uri_dashes'] = false;
 $route['technician-setup'] = '/Technician_detail';
 $route['technician-setup/(:any)'] = '/Technician_detail/$1';
 
-// ads details page
-$route['sell-machine/(:any)'] = '/sell_machine/index/$1';
-
-// ads listing page
-$route['ads/(:any)'] = '/ads/index/$1';
 
 // contact us
 $route['contact-us'] = '/contact_us/index';
 $route['contact-us/(:any)'] = '/contact-us/index/$1';
 
 $route['search/(:any)'] = '/Search/index/$1';
-
-// techician details page
-$route['machine-technician/(:any)'] = '/machine_technician/index/$1';
-
-// technician listing page
-$route['technician'] = '/Technician_detail/listing';
-$route['technician/(:any)'] = '/Technician_detail/listing/$1';
-
-// bussiness listing page
-$route['industry'] = '/business/listing';
-$route['industry/(:any)'] = '/business/listing/$1';

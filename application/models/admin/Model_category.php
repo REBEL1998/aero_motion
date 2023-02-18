@@ -22,9 +22,9 @@ class Model_category extends CI_Model
 			$this->db->where('parentid = ', $catId);
 			$this->db->where('level = ', '2');
 		}
-		else{
-			$this->db->where('level = ', '1');
-		}
+		// else{
+		// 	$this->db->where('level = ', '1');
+		// }
 		
 		
 		$query=$this->db->get()->result_array(); 

@@ -13,8 +13,9 @@
                         </div>
                     </nav> 
                     [ Layout footer ] End -->
-                
-                
+
+                    </div>
+                    <!-- [ content ] End -->
                 </div>
                 <!-- [ Layout content ] Start -->
             </div>

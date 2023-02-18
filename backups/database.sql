@@ -34,7 +34,7 @@ create table `users` (
 	`lastname` varchar(255) NOT NULL,
 	`status` char(1) NOT NULL DEFAULT 'Y',
 	`flagdelete` char(1) NOT NULL DEFAULT 'N',
-	`rmdate` date DEFAULT NULL
+	`rmdate` date DEFAULT NULL,
 	 PRIMARY KEY (`id`),
    KEY (`status`),
    KEY (`flagdelete`),

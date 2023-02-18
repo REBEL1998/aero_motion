@@ -32,13 +32,11 @@ class Category extends Admin_Controller
 	{
 
 		$this->form_validation->set_rules('txtName', 'Name', 'trim|required');
-		$this->form_validation->set_rules('txtIndustryName', 'Name', 'trim|required');
-		if (empty($_FILES['categoryImage']['name'])){
-			$this->form_validation->set_rules('categoryImage', 'Image', 'required');
-		}
+		// $this->form_validation->set_rules('txtIndustryName', 'Name', 'trim|required');
+		// if (empty($_FILES['categoryImage']['name'])){
+		// 	$this->form_validation->set_rules('categoryImage', 'Image', 'required');
+		// }
 		
-		
-	
         if ($this->form_validation->run() == TRUE) {
             // true case
 			
@@ -51,13 +49,12 @@ class Category extends Admin_Controller
 			
 			$data = array(
         		'name' => $this->input->post('txtName'),
-        		'industry' => $this->input->post('txtIndustryName'),
-        		'description' => $this->input->post('txtShortDesc'),
-        		'parentid' => $this->atri->de($this->input->post('hdnparentcatid')),
-        		'level' => $level,
+        		// 'industry' => $this->input->post('txtIndustryName'),
+        		'desc' => $this->input->post('txtShortDesc'),
+        		// 'parentid' => $this->atri->de($this->input->post('hdnparentcatid')),
         		'status' => 'Y',
         		'url_key' => '',
-        		'flagdisplayinhomepage' => $this->input->post('flagdisplayinhome')
+        		// 'flagdisplayinhomepage' => $this->input->post('flagdisplayinhome')
         	);
 
 			
@@ -65,34 +62,6 @@ class Category extends Admin_Controller
  
 			if($create_id == true) {
 	   			    
-				$new_name = 'category_img_'.$create_id . '_' .$_FILES["categoryImage"]['name'];
-	
-				$config['upload_path']          = './assets/sysimagedocs/';
-                $config['allowed_types']        = 'gif|jpg|png';
-                $config['max_size']             = 10000;
-				$config['file_name']            = $new_name;
-                /* $config['max_width']            = 1024;
-                $config['max_height']           = 768; */
-
-                $this->load->library('upload', $config);
-
-                if (!$this->upload->do_upload('categoryImage'))
-                {
-                        $error = array('error' => $this->upload->display_errors());
-		
-                        redirect('admin/category/addedit', 'refresh');
-                }
-                else
-                {
-						
-                        $data = array('upload_data' => $this->upload->data());
-
-						/* Now update image name in category table */
-						$result = $this->model_category->updateCategoryImageName($create_id,$data["upload_data"]["file_name"]);
-
-                        //redirect('admin/category', $data);
-                }				
-				
 				$url = '';
 				if($this->uri->segment('4') !== null && $this->uri->segment('5') == null){
 					$url = $this->uri->segment('4') ;
@@ -113,9 +82,7 @@ class Category extends Admin_Controller
 			}
             $this->data['doAction'] = 'Add';
             $this->data['txtName'] = isset($_REQUEST['txtName']) ? $_REQUEST['txtName'] : '';
-            $this->data['txtIndustryName'] = isset($_REQUEST['txtIndustryName']) ? $_REQUEST['txtIndustryName'] : '';
             $this->data['txtShortDesc'] = isset($_REQUEST['txtShortDesc']) ? $_REQUEST['txtShortDesc'] : '';
-            $this->data['flagdisplayinhome'] = isset($_REQUEST['flagdisplayinhome']) ? $_REQUEST['flagdisplayinhome'] : 'N';
             $this->render_template('admin/category/addedit', $this->data);
         }
 	}
@@ -126,24 +93,16 @@ class Category extends Admin_Controller
 		if($id) {
 			$id = $this->atri->de($id);
 			$this->form_validation->set_rules('txtName', 'Name', 'trim|required');
-			$this->form_validation->set_rules('txtIndustryName', 'Industry', 'trim|required');
 			
 			$list_data = $this->model_category->getCategoryList($id);
 			
-			
-			if (empty($_FILES['categoryImage']['name']) && $list_data[0]['imagename'] == null){
-				$this->form_validation->set_rules('categoryImage', 'Image', 'required');
-			}
-
 			if ($this->form_validation->run() == TRUE) {
 	            
 				$urlKey = preg_replace('/[^a-zA-Z0-9_.]/', '_', $this->input->post('txtName')) . '_' . $id;
 				
 				$data = array(
 					'name' => $this->input->post('txtName'),
-					'industry' => $this->input->post('txtIndustryName'),
-					'description' => $this->input->post('txtShortDesc'),
-					'flagdisplayinhomepage' => $this->input->post('flagdisplayinhome'),
+					'desc' => $this->input->post('txtShortDesc'),
 					'url_key' => strtolower($urlKey)
 				);
 
@@ -157,36 +116,6 @@ class Category extends Admin_Controller
 				}
 
 				$update = $this->model_category->edit($data, $id);
-				
-				if (!empty($_FILES['categoryImage']['name'])){
-					$new_name = 'category_img_'.$id . '_' .$_FILES["categoryImage"]['name'];
-		
-					$config['upload_path']          = './assets/sysimagedocs/';
-					$config['allowed_types']        = 'gif|jpg|png';
-					$config['max_size']             = 10000;
-					$config['file_name']            = $new_name;
-					/* $config['max_width']            = 1024;
-					$config['max_height']           = 768; */
-
-					$this->load->library('upload', $config);
-
-					if (!$this->upload->do_upload('categoryImage'))
-					{
-							$error = array('error' => $this->upload->display_errors());
-							redirect('admin/category/addedit', 'refresh');
-					}
-					else
-					{
-							$data = array('upload_data' => $this->upload->data());
-
-							/* Now update image name in category table */
-							$result = $this->model_category->updateCategoryImageName($id,$data["upload_data"]["file_name"]);
-
-							//redirect('admin/category', $data);
-					}		
-					
-				}
-				
 				
 				if($update == true) {
 					$this->session->set_flashdata('success', 'Record updated successfully.');
@@ -203,13 +132,8 @@ class Category extends Admin_Controller
 	            
 				$result = $this->model_category->getCategoryList($id);
 				
-				
 	        	$this->data['txtName'] = $result[0]['name'];
-	        	$this->data['txtIndustryName'] = $result[0]['industry'];
-	        	$this->data['txtShortDesc'] = $result[0]['description'];
-	        	$this->data['txtparentid'] = $result[0]['parentid'];
-	        	$this->data['categoryImage'] = $result[0]['imagename'];
-	        	$this->data['flagdisplayinhome'] = $result[0]['flagdisplayinhomepage'];
+	        	$this->data['txtShortDesc'] = $result[0]['desc'];
 
 				$this->render_template('admin/category/addedit', $this->data);	
 	        }	

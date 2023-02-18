@@ -34,7 +34,7 @@
 					</div>
 				</div>
 				<div class="table-responsive">
-					<table id="report-table" class="table table-bordered table-striped mb-0">
+					<table id="report-table" class="table table-bordered table-striped mb-0 ">
 							<thead>
 								<tr>
 									<th width="">Name</th>

@@ -78,6 +78,7 @@ class Product extends Admin_Controller
 			// var_dump($cat_data);
 			// die();
             $this->data['doAction'] = 'Add';
+            $this->data['txtTitle'] = '';
             $this->data['arrCategory'] = $cat_data;
             $this->data['txtName'] = isset($_REQUEST['txtName']) ? $_REQUEST['txtName'] : '';
             $this->data['txtShortDesc'] = isset($_REQUEST['txtShortDesc']) ? $_REQUEST['txtShortDesc'] : '';

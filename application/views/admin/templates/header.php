@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" class="default-style layout-fixed layout-navbar-fixed">
 <head>
-    <title>Empire | B4+ admin template</title>
+    <title>Aero Motion | Admin</title>
 
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -29,5 +29,4 @@
     <!-- Libs -->
     <link rel="stylesheet" href="<?php echo base_url("assets/admin/libs/perfect-scrollbar/perfect-scrollbar.css"); ?>">
     <link rel="stylesheet" href="<?php echo base_url("assets/admin/libs/flot/flot.css"); ?>">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
 </head>

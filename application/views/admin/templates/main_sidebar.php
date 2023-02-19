@@ -5,39 +5,55 @@
 			<img src="<?php echo base_url("assets/admin/img/logo.png"); ?>" alt="Brand Logo" class="img-fluid">
 		</span>
 		<a href="<?php echo base_url("admin/dashboard"); ?>" class="app-brand-text demo sidenav-text font-weight-normal ml-2">AERO Motion</a>
-		<a href="javascript:" class="layout-sidenav-toggle sidenav-link text-large ml-auto">
+		<a href="javascript:" class="sidenav-link text-large ml-auto">
 			<i class="ion ion-md-menu align-middle"></i>
 		</a>
 	</div>
 	<div class="sidenav-divider mt-0"></div>
-
 	<!-- Links -->
-	<ul class="sidenav-inner py-1">
-
-		<!-- Dashboards -->
+	<ul class="sidenav-inner py-1"><?php 
+		
+		$arrSiderbar = [
+			0 => [
+				"title" => "Dashboard",
+				"url" => base_url("admin/dashboard"),
+				"urlKey" => "dashboard",
+			],
+			1 => [
+				"title" => "Category",
+				"url" => base_url("admin/category"),
+				"urlKey" => "category",
+			],
+			2 => [
+				"title" => "Product",
+				"url" => base_url("admin/product"),
+				"urlKey" => "product",
+			],
+			3 => [
+				"title" => "Contact Us",
+				"url" => base_url("admin/contactus"),
+				"urlKey" => "contactus",
+			],
+			4 => [
+				"title" => "System Settings",
+				"url" => base_url("admin/system_setting"),
+				"urlKey" => "system_setting",
+			],
+		];
+		
+		?><!-- Dashboards -->
 		<li class="sidenav-item open active">
 			<ul class="sidenav-menu">
-				<li class="sidenav-item active">
-					<a href="<?php echo base_url("admin/category"); ?>" class="sidenav-link">
-						<div>Category</div>
-					</a>
-				</li>
-				<li class="sidenav-item">
-					<a href="<?php echo base_url("admin/product"); ?>" class="sidenav-link">
-						<div>Products</div>
-					</a>
-				</li>
-				<li class="sidenav-item">
-					<a href="<?php echo base_url("admin/contactus"); ?>" class="sidenav-link">
-						<div>Contact Us</div>
-					</a>
-				</li>
-				<li class="sidenav-item">
-					<a href="<?php echo base_url("admin/system_setting"); ?>" class="sidenav-link">
-						<div>System Settings</div>
-					</a>
-				</li>
-			</ul>
+				<?php 
+				foreach($arrSiderbar as $key => $arrTempSidebar) {
+					$strActive = $this->uri->segment(2) == 	$arrTempSidebar['urlKey'] ? "active" : ""; 					
+					?><li class="sidenav-item <?php print($strActive); ?>">
+						<a href="<?php echo $arrTempSidebar['url']; ?>" class="sidenav-link">
+							<div><?php echo $arrTempSidebar['title']; ?></div>
+						</a>
+					</li><?php
+				}
+			?></ul>
 		</li>
 	</ul>
 </div>

@@ -85,6 +85,37 @@ CREATE TABLE `email_otp` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 
+=> For store product details
+
+CREATE TABLE `product` (
+    `id` int(11) NOT NULL,
+    `catid` int(11) NOT NULL,
+    `name` varchar(255) NOT NULL,
+    `title` varchar(255) NOT NULL,
+    `desc` text NOT NULL,
+    `flagstatus` char(1) DEFAULT NULL,
+    `dateadded` datetime DEFAULT NULL,
+    `dateupdate` datetime DEFAULT NULL,
+    `flagdeleted` datetime DEFAULT NULL
+    PRIMARY KEY (id),
+	KEY `catid` (`catid`),
+	KEY `dateadded` (`dateadded`),
+	KEY `dateupdate` (`dateupdate`),
+	KEY `flagstatus` (`flagstatus`),
+	KEY `flagdeleted` (`flagdeleted`)
+  )
+  
+  
+=> dump data insert 
+
+
+INSERT INTO `product` (`id`, `catid`, `name`, `title`, `desc`, `flagstatus`, `dateadded`, `dateupdate`, `flagdeleted`) VALUES
+(1, 1, 'This is sample product', ' This is sample product', ' This is sample product', 'Y', '2023-02-19 07:07:25', NULL, NULL),
+(2, 1, 'This is sample product', ' This is sample product', ' This is sample product', 'Y', '2023-02-19 07:07:42', NULL, NULL),
+(3, 1, 'This is sample product', ' This is sample product', ' This is sample product', 'Y', '2023-02-19 07:07:56', NULL, NULL),
+(4, 2, 'This is sample product one qdsgdsgadsg', ' This is sample product one  sdfsdfafd ', ' This is sample product onefsdafadfsf', 'Y', '2023-02-19 07:33:07', '2023-02-19 08:05:55', NULL);
+
+
 => For store contact details 
 
 CREATE TABLE `contactus` (

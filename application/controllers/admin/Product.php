@@ -80,6 +80,7 @@ class Product extends Admin_Controller
             $this->data['doAction'] = 'Add';
             $this->data['arrCategory'] = $cat_data;
             $this->data['txtName'] = isset($_REQUEST['txtName']) ? $_REQUEST['txtName'] : '';
+            $this->data['txtTitle'] = isset($_REQUEST['txtTitle']) ? $_REQUEST['txtTitle'] : '';
             $this->data['txtShortDesc'] = isset($_REQUEST['txtShortDesc']) ? $_REQUEST['txtShortDesc'] : '';
             $this->render_template('admin/product/addedit', $this->data);
         }

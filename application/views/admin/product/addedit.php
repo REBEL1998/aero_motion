@@ -10,9 +10,9 @@
     </div>  
 </div>
   <div class="card mb-4">
+	  <form role="form" id="frmLevel0" name="frmLevel0" action="<?php base_url('admin/product/create') ?>" method="post" onsubmit="return submitForm('#frmLevel0');" enctype="multipart/form-data">
         <h6 class="card-header"><?= isset($doAction) && $doAction == 'Edit' ? 'Edit' : 'Add'?> Product</h6>
         <div class="card-body">
-            <form role="form" id="frmLevel0" name="frmLevel0" action="<?php base_url('admin/product/create') ?>" method="post" onsubmit="return submitForm('#frmLevel0');" enctype="multipart/form-data">
                 <div class="form-group row">
 					<label class="col-form-label col-sm-2 text-sm-right">Select Category<span class="text-danger">*</span></label>
                     <div class="col-sm-10">
@@ -54,13 +54,17 @@
 					<div class="col-sm-10">
 						<?php if(!empty($productImage)){ ?>
 							<img src="<?=base_url().'assets/admin/uploads/product/'.$productImage?>"width="100px" height = "100px">
-							<a href="<?=base_url('admin/product/')?>deleteimage/<?=$this->atri->en($prodId)?>" class="btn btn-secondary" >Delete</a>
+							<a href="<?=base_url('admin/product/')?>deleteimage/<?=$this->atri->en($prodId)?>" class="btn btn-sm btn-danger" >Delete</a>
 						<?php } else{ ?>
 							<input type="file" name="productImage">
 						<?php } ?>
 					</div>
 				</div>
-				<div class="addContact">
+				
+			</div>
+			<h6 class="card-header"><?= isset($doAction) && $doAction == 'Edit' ? 'Edit' : 'Add'?> Specification</h6>
+			<div class="card-body">
+			<div class="addContact">
 					<?php 
 					
 					if(isset($doAction) && $doAction == 'Edit'){
@@ -69,7 +73,7 @@
 						  foreach($arrSpecification as $key => $value){
 						?>
 							<div class="form-group row contact_incress">
-								<label class="col-form-label col-sm-2 text-sm-right">Add Specification <?=$count?></label>
+								<label class="col-form-label col-sm-2 text-sm-right">Item <?=$count?></label>
 								<div class="col-sm-4">
 									<input type="text" class="form-control validate-control" value="<?=$key?>" data-required="Y"  name="txtSpecificationName[]" autocomplete="off">
 								</div>
@@ -77,9 +81,8 @@
 									<input type="text" class="form-control validate-control" value="<?=$value?>" data-required="Y" name="txtSpecificationValue[]" autocomplete="off">
 								</div>
 								<div class="col-sm-1">
-									
-									<?php echo $count == 1 ? '<a class="btn btn-secondary" onClick="addspecification()"><i class="fas fa-plus"></i></a>' :
-									'<a class="btn btn-secondary" id="remove"><i class="fas fa-minus"></i></a>'; ?>
+									<?php echo $count == 1 ? '<a class="btn btn-success" onClick="addspecification()"><i class="fas fa-plus" style="color:white"></i></a>' :
+									'<a class="btn btn-danger" id="remove"><i class="fas fa-minus" style="color:white"></i></a>'; ?>
 								</div>
 							</div>
 						  
@@ -89,7 +92,7 @@
 					}else{
 					?>
 					<div class="form-group row contact_incress">
-						<label class="col-form-label col-sm-2 text-sm-right">Add Specification</label>
+						<label class="col-form-label col-sm-2 text-sm-right">Item 1</label>
 						<div class="col-sm-4">
 							<input type="text" class="form-control validate-control" value="" data-required="Y"  name="txtSpecificationName[]" autocomplete="off">
 						</div>
@@ -97,17 +100,17 @@
 							<input type="text" class="form-control validate-control" value="" data-required="Y" name="txtSpecificationValue[]" autocomplete="off">
 						</div>
 						<div class="col-sm-1">
-							<a class="btn btn-secondary" onClick="addspecification()"><i class="fas fa-plus"></i></a>
+							<a class="btn btn-success" onClick="addspecification()"><i class="fas fa-plus" style="color:white"></i></a>
 						</div>
 					</div>
 					<?php } ?>
 				</div>
-                <div class="form-group row">
+				<div class="form-group row">
                     <div class="col-sm-10 ml-sm-auto">
                         <button type="submit" class="btn btn-primary">Submit</button>
                         <a href="<?php echo base_url('admin/product/') ?>" class="btn btn-warning">Back</a>
                     </div>
                 </div>
-            </form>
-        </div>
+			</div>
+		</form>
     </div>

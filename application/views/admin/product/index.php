@@ -36,22 +36,20 @@
 					<table id="report-table" class="table table-bordered table-striped mb-0">
 							<thead>
 								<tr>
-									<th width="">Category Name</th>
-									<th width="">Name</th>
-									<th width="">Title</th>
-									<th width="50%">Short Description</th>
-									<th width="20%" class="text-center" >Status</th>
-									<th class="text-center" width="20%" >Action</th>
+									<th width="20%">Name</th>
+									<th width="20%">Category</th>
+									<th width="20%">Title</th>
+									<th width="8%" class="text-center" >Status</th>
+									<th class="text-center" width="12%" >Action</th>
 								</tr>
 							</thead>
 							<tbody>
 							<?php if($list_data){
 								foreach ($list_data as $key => $value){ 
 								?><tr>
-										<td> <?php echo $value['catName']; ?></td>
 										<td> <?php echo $value['prodName']; ?></td>
 										<td> <?php echo $value['prodTitle']; ?></td>
-										<td><?php echo $value['prodDesc']; ?></td>
+										<td> <?php echo $value['catName']; ?></td>
 										<td class="text-center">
 											<?php $statusClass = $value['prodStatus'] == 'Y' ? "success" : "danger" ;?>
 											<span class="tag badge badge-<?php echo $statusClass; ?>"><a href="<?php echo base_url('admin/product/status/'.$this->atri->en($value['prodId']).'/'.$this->uri->segment('4')) ?>" style="color:white;"><?php echo $arrStatus[$value['prodStatus']]; ?></a></span>

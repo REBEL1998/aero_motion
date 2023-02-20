@@ -39,8 +39,8 @@
 								<tr>
 									<th width="">Name</th>
 									<th width="50%">Short Description</th>
-									<th width="20%" class="text-center" >Status</th>
-									<th class="text-center" width="20%" >Action</th>
+									<th width="8%" class="text-center" >Status</th>
+									<th class="text-center" width="12%" >Action</th>
 								</tr>
 							</thead>
 							<tbody>

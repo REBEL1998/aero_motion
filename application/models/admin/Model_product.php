@@ -18,7 +18,9 @@ class Model_product extends CI_Model
 			'p.desc as prodDesc',
 			'p.title as prodTitle',
 			'p.flagstatus as prodStatus',
-			'p.dateadded as prodDate'
+			'p.dateadded as prodDate',
+			'p.specification',
+			'p.productImage',
 		]);
 		$this->db->from('product as p');
 		$this->db->join('category c', 'c.id = p.catid');
@@ -59,7 +61,7 @@ class Model_product extends CI_Model
 	public function delete($id)
 	{
 		$this->db->where('id', $id);
-		$delete = $this->db->update('category', array('rmdate' => UTCDATE, 'flagdelete' => 'D'));
+		$delete = $this->db->update('product', array('flagdeleted' => UTCDATETIME));
 		return ($delete == true) ? true : false;
 	}
 	
@@ -71,5 +73,36 @@ class Model_product extends CI_Model
 		$this->db->where('id', $id);
 		$delete = $this->db->update('product');
 		return ($delete == true) ? true : false;
+	}
+	
+	public function updateProductImageName($catid = null, $imgName = null) {
+		
+		$this->db->set('productImage', $imgName);
+		
+		$this->db->where('id', $catid);
+		$update = $this->db->update('product');
+		return ($update == true) ? true : false;
+	}
+	
+	//deleteImage
+	
+	public function deleteproductImage($prodId = null) {
+		
+		/*first get file name based on categoryid*/
+		
+		$arrRslt = $this->getProductList($prodId);
+		
+		$prodImageName = $arrRslt[0]['productImage'];
+		
+		if(is_file(FCPATH.'assets\admin\uploads\product\\'.$prodImageName) == true){
+			
+			unlink(FCPATH.'assets\admin\uploads\product\\'.$prodImageName);
+		}
+		
+		$this->db->set('productImage', '');
+		
+		$this->db->where('id', $prodId);
+		$update = $this->db->update('product');
+		return ($update == true) ? true : false;
 	}
 }

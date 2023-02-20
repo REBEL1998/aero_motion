@@ -38,6 +38,17 @@ class Product extends Admin_Controller
         if ($this->form_validation->run() == TRUE) {
             // true case
 			
+			$getSpecificationName = $this->input->post('txtSpecificationName');
+			$getSpecificationValue = $this->input->post('txtSpecificationValue');
+			$arrSpecification = [];
+			
+			foreach($getSpecificationName as $key => $value){
+				if(!empty($getSpecificationName[$key])){
+					$arrSpecification[$getSpecificationName[$key]] = $getSpecificationValue[$key];
+				}
+			}
+			
+			
 			if($this->atri->de($this->input->post('hdnparentcatid')) == null){
 				$level = 1;
 			}
@@ -50,12 +61,42 @@ class Product extends Admin_Controller
         		'name' => $this->input->post('txtName'),
         		'title' => $this->input->post('txtTitle'),
         		'desc' => $this->input->post('txtShortDesc'),
+				'specification' => json_encode($arrSpecification,true),
         		'flagstatus' => 'Y',
 				'dateadded' => UTCDATETIME,
         	);
         	$create_id = $this->model_product->create($data);
  
 			if($create_id == true) {
+				
+				
+				$new_name = 'product_img_'.$create_id . '_' .$_FILES["productImage"]['name'];
+	
+				$config['upload_path']          = './assets/admin/uploads/product';
+                $config['allowed_types']        = 'jpg|png|jpeg|';
+                $config['max_size']             = 10000;
+				$config['file_name']            = $new_name;
+                /* $config['max_width']            = 1024;
+                $config['max_height']           = 768; */
+
+                $this->load->library('upload', $config);
+
+                if (!$this->upload->do_upload('productImage'))
+                {
+                        $error = array('error' => $this->upload->display_errors());
+		
+                        redirect('admin/product/addedit', 'refresh');
+                }
+                else
+                {
+						
+                        $data = array('productImage' => $this->upload->data());
+
+						/* Now update image name in category table */
+						$result = $this->model_product->updateProductImageName($create_id,$data["productImage"]["file_name"]);
+
+                        //redirect('admin/category', $data);
+                }
 	   			    
 				$url = '';
 				if($this->uri->segment('4') !== null && $this->uri->segment('5') == null){
@@ -97,11 +138,23 @@ class Product extends Admin_Controller
 	            
 				$urlKey = preg_replace('/[^a-zA-Z0-9_.]/', '_', $this->input->post('txtName')) . '_' . $id;
 				
+				
+				$getSpecificationName = $this->input->post('txtSpecificationName');
+				$getSpecificationValue = $this->input->post('txtSpecificationValue');
+				$arrSpecification = [];
+				
+				foreach($getSpecificationName as $key => $value){
+					if(!empty($getSpecificationName[$key])){
+						$arrSpecification[$getSpecificationName[$key]] = $getSpecificationValue[$key];
+					}
+				}
+				
 				$data = array(
 					'catid' => $this->input->post('catId'),
 					'name' => $this->input->post('txtName'),
 					'title' => $this->input->post('txtTitle'),
 					'desc' => $this->input->post('txtShortDesc'),
+					'specification' => json_encode($arrSpecification,true),
 					'flagstatus' => 'Y',
 					'dateupdate' => UTCDATETIME,
 				);
@@ -117,13 +170,44 @@ class Product extends Admin_Controller
 
 				$update = $this->model_product->edit($data, $id);
 				
+				if (!empty($_FILES['productImage']['name'])){
+					$new_name = 'product_img_'.$id . '_' .$_FILES["productImage"]['name'];
+		
+					$config['upload_path']          = './assets/admin/uploads/product/';
+					$config['allowed_types']        = 'jpeg|jpg|png';
+					$config['max_size']             = 10000;
+					$config['file_name']            = $new_name;
+					/* $config['max_width']            = 1024;
+					$config['max_height']           = 768; */
+
+					$this->load->library('upload', $config);
+
+					if (!$this->upload->do_upload('productImage'))
+					{
+							$error = array('error' => $this->upload->display_errors());
+							redirect('admin/product/addedit', 'refresh');
+					}
+					else
+					{
+							$data = array('productImage' => $this->upload->data());
+
+							/* Now update image name in category table */
+							$result = $this->model_product->updateProductImageName($id,$data["productImage"]["file_name"]);
+
+							//redirect('admin/category', $data);
+					}		
+					
+				}
+				
+				
+				
 				if($update == true) {
 					$this->session->set_flashdata('success', 'Record updated successfully.');
 					redirect('admin/product/'.$url, 'refresh');
 				}
 				else {
 					$this->session->set_flashdata('errors', 'Error occurred!!');
-					redirect('admin/product/edit/'.$id, 'refresh');
+					redirect('admin/product/addedit/'.$id, 'refresh');
 				}
 			
 	        }
@@ -135,8 +219,10 @@ class Product extends Admin_Controller
 	        	$this->data['txtTitle'] = $list_data[0]['prodTitle'];
 	        	$this->data['txtShortDesc'] = $list_data[0]['prodDesc'];
 	        	$this->data['selectedCatId'] = $list_data[0]['catId'];
+	        	$this->data['prodId'] = $list_data[0]['prodId'];
+	        	$this->data['jsonSpecification'] = $list_data[0]['specification'];
+	        	$this->data['productImage'] = $list_data[0]['productImage'];
 	        	$this->data['arrCategory'] = $cat_data;
-
 				$this->render_template('admin/product/addedit', $this->data);	
 	        }	
 		}	
@@ -144,25 +230,14 @@ class Product extends Admin_Controller
 
 	public function delete($id)
 	{
-		if($id) {
-
-			$catid = $id;
-			/* First check for subcategory is present or not */
-			$cat_cnt = $this->model_category->getSubCategoryCount($this->atri->de($id));
-			
-			if($cat_cnt == 0){
-				
-				$delete = $this->model_category->delete($this->atri->de($catid));
-			
-				if($delete == true) {
-					$this->session->set_flashdata('success', 'Record removed successfully.');
-				}
-				else {
-					$this->session->set_flashdata('error', 'Error occurred!!');
-				}
+		if($id) {				
+			$delete = $this->model_product->delete($this->atri->de($id));
+		
+			if($delete == true) {
+				$this->session->set_flashdata('success', 'Record removed successfully.');
 			}
 			else {
-				$this->session->set_flashdata('error', 'Sub category is present. Please delete all subcategory first.');
+				$this->session->set_flashdata('error', 'Error occurred!!');
 			}
 			
 			$url = '';
@@ -170,7 +245,7 @@ class Product extends Admin_Controller
 				$url = '/index/'. $this->uri->segment('5');
 			}
 			
-			redirect('admin/category/'.$url, 'refresh');
+			redirect('admin/product/'.$url, 'refresh');
 		}
 	}
 	
@@ -199,19 +274,15 @@ class Product extends Admin_Controller
 	public function deleteimage($id)
 	{
 		if($id) {
-			$delete = $this->model_category->deleteCategoryImage($this->atri->de($id));
+			$delete = $this->model_product->deleteProductImage($this->atri->de($id));
+		
 			if($delete == true) {
 				$this->session->set_flashdata('success', 'Status updated successfully.');
 			}
 			else {
 				$this->session->set_flashdata('error', 'Error occurred!!');
 			}
-			
-			$url = '';
-			if($this->uri->segment('5') !== null){
-				$url = '/index/'. $this->uri->segment('4');
-			}
-			redirect('admin/category/edit/'.$id, 'refresh');
+			redirect('admin/product/edit/'.$id, 'refresh');
 
 		}
 	}

@@ -88,15 +88,17 @@ CREATE TABLE `email_otp` (
 => For store product details
 
 CREATE TABLE `product` (
-    `id` int(11) NOT NULL,
-    `catid` int(11) NOT NULL,
-    `name` varchar(255) NOT NULL,
-    `title` varchar(255) NOT NULL,
-    `desc` text NOT NULL,
-    `flagstatus` char(1) DEFAULT NULL,
-    `dateadded` datetime DEFAULT NULL,
-    `dateupdate` datetime DEFAULT NULL,
-    `flagdeleted` datetime DEFAULT NULL
+	  `id` int(11) NOT NULL AUTO_INCREMENT,
+	  `catid` int(11) NOT NULL,
+	  `name` varchar(255) NOT NULL,
+	  `title` varchar(255) NOT NULL,
+	  `desc` text NOT NULL,
+	  `specification` text DEFAULT NULL,
+	  `productImage` varchar(500) DEFAULT NULL,
+	  `flagstatus` char(1) DEFAULT NULL,
+	  `dateadded` datetime DEFAULT NULL,
+	  `dateupdate` datetime DEFAULT NULL,
+	  `flagdeleted` datetime DEFAULT NULL,
     PRIMARY KEY (id),
 	KEY `catid` (`catid`),
 	KEY `dateadded` (`dateadded`),

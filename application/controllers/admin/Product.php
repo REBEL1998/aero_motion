@@ -21,7 +21,7 @@ class Product extends Admin_Controller
 	}
 	
 	public function index($prod_id = NULL){
-		$parent_prod_id = $this->atri->de($prod_id);
+		$parent_prod_id = $this->atri->de($prod_id);    
 		$list_data = $this->model_product->getProductList($parent_prod_id);
        
 		$this->data['list_data'] = $list_data;

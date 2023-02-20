@@ -75,5 +75,3 @@ $route['technician-setup/(:any)'] = '/Technician_detail/$1';
 // contact us
 $route['contact-us'] = '/contact_us/index';
 $route['contact-us/(:any)'] = '/contact-us/index/$1';
-
-$route['search/(:any)'] = '/Search/index/$1';

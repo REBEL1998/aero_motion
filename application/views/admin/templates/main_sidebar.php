@@ -1,10 +1,10 @@
 <!-- [ Layout sidenav ] Start -->
-<div id="layout-sidenav" class="layout-sidenav sidenav sidenav-vertical bg-white logo-dark">
+<div id="layout-sidenav" class="layout-sidenav sidenav sidenav-vertical bg-white logo-white">
 	<div class="app-brand demo">
 		<span class="app-brand-logo demo">
-			<img src="<?php echo base_url("assets/admin/img/logo.png"); ?>" alt="Brand Logo" class="img-fluid">
+			<img src="<?php echo base_url("assets/admin/img/logo-dark.png"); ?>" alt="Brand Logo" class="img-fluid" style="width:40px;">
 		</span>
-		<a href="<?php echo base_url("admin/dashboard"); ?>" class="app-brand-text demo sidenav-text font-weight-normal ml-2">AERO Motion</a>
+		<a href="<?php echo base_url("admin/dashboard"); ?>" class="app-brand-text demo sidenav-text font-weight-normal ml-2"><b>AERO Motion</b></a>
 		<a href="javascript:" class="sidenav-link text-large ml-auto">
 			<i class="ion ion-md-menu align-middle"></i>
 		</a>

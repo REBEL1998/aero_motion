@@ -188,10 +188,10 @@ h3{
     visibility:visible
 }
 .owl-carousel:hover .owl-nav div:hover{
-    color:#ff5e13
+    color:#00337C
 }
 .boxed-btn{
-    background:#ff5e13;
+    background:#00337C;
     color:#fff;
     display:inline-block;
     padding:13px 32px;
@@ -203,15 +203,15 @@ h3{
 }
 .boxed-btn:hover{
     background:transparent;
-    color:#ff5e13 !important;
-    border:1px solid #ff5e13
+    color:#00337C !important;
+    border:1px solid #00337C
 }
 .boxed-btn:focus{
     outline:none;
     color:#fff
 }
 .boxed-btn2{
-    background:#ff5e13;
+    background:#00337C;
     color:#fff;
     display:inline-block;
     padding:22px 50px;
@@ -227,7 +227,7 @@ h3{
     color:#fff
 }
 .underline-hover{
-    color:#ff5e13;
+    color:#00337C;
     font-weight:400;
     font-size:16px;
     -webkit-transition:.3s;
@@ -237,7 +237,7 @@ h3{
 }
 .underline-hover:hover{
     text-decoration:underline;
-    color:#ff5e13
+    color:#00337C
 }
 .section-title h3{
     font-size:44px;
@@ -264,7 +264,7 @@ h3{
 }
 .section-title span{
     font-size:16px;
-    color:#ff5e13;
+    color:#00337C;
     font-family:"Rubik",sans-serif;
     font-weight:400;
     margin-bottom:13px;
@@ -416,7 +416,7 @@ h3{
 .header-area .main-header-area .main-menu ul li a::before{
     position:absolute;
     content:"";
-    background:#ff5e13;
+    background:#00337C;
     width:100%;
     height:2px;
     bottom:0;
@@ -467,7 +467,7 @@ h3{
     display:none
 }
 .header-area .main-header-area .main-menu ul li .submenu li:hover a{
-    color:#ff5e13
+    color:#00337C
 }
 .header-area .main-header-area .main-menu ul li:hover>.submenu{
     opacity:1;
@@ -687,7 +687,7 @@ h3{
     }
 }
 .slider-area .single-slider .slider-content p{
-    color:#ff5e13;
+    color:#00337C;
     font-size:16px;
     font-weight:400;
     margin-bottom:16px
@@ -799,7 +799,7 @@ h3{
 }
 .service-area .single-service a:hover{
     text-decoration:underline;
-    color:#ff5e13
+    color:#00337C
 }
 @media (max-width: 767px){
     .service-area .single-service{
@@ -848,14 +848,14 @@ h3{
     font-family:"Rubik",sans-serif
 }
 .service-details .details-nav ul li a.active.show{
-    color:#ff5e13;
+    color:#00337C;
     padding-left:27px;
     position:relative
 }
 .service-details .details-nav ul li a.active.show::before{
     position:absolute;
     content:"";
-    background:#ff5e13;
+    background:#00337C;
     width:17px;
     height:2px;
     top:50%;
@@ -910,7 +910,7 @@ h3{
     padding-bottom:120px
 }
 .project-area .project-active .single-project .project-info span{
-    color:#ff5e13;
+    color:#00337C;
     font-family:"Rubik",sans-serif;
     font-weight:400;
     display:block;
@@ -951,7 +951,7 @@ h3{
     }
 }
 .project-area .more-project a:hover{
-    color:#ff5e13;
+    color:#00337C;
     text-decoration:underline
 }
 .project-area .section-title h3{
@@ -1018,7 +1018,7 @@ h3{
     visibility:visible
 }
 .project-active.owl-carousel:hover .owl-nav div:hover{
-    color:#ff5e13
+    color:#00337C
 }
 .main-project-area{
     padding-top:120px;
@@ -1036,7 +1036,7 @@ h3{
     width:100%
 }
 .main-project-area .single-project .project-info span{
-    color:#ff5e13;
+    color:#00337C;
     font-family:"Rubik",sans-serif;
     font-weight:400;
     display:block;
@@ -1303,12 +1303,12 @@ h3{
     left:-10px;
     right:-10px;
     bottom:-10px;
-    border:1px solid #ff5e13;
+    border:1px solid #00337C;
     border-radius:50%;
     opacity:.15
 }
 .about-area .about-thumb a.video-icon i{
-    color:#ff5e13;
+    color:#00337C;
     padding-left:4px
 }
 .about-area .about-info-text .quote{
@@ -1376,7 +1376,7 @@ h3{
     position:absolute;
     bottom:50px;
     left:50px;
-    background:#ff5e13;
+    background:#00337C;
     padding:55px 43px
 }
 .about-area .about-review .project-review h3{
@@ -1440,7 +1440,7 @@ h3{
     visibility:visible
 }
 .about-pro-active.owl-carousel:hover .owl-nav div:hover{
-    color:#ff5e13
+    color:#00337C
 }
 .counter-area{
     padding-top:65px;
@@ -1509,7 +1509,7 @@ h3{
 }
 .cta-area .cta-content{
     display:block;
-    background:#ff5e13;
+    background:#00337C;
     position:relative;
     padding:68px 45px 114px 64px
 }
@@ -1574,7 +1574,7 @@ h3{
     color:#2a2a2a
 }
 .contact-info .media-body h3 a:hover{
-    color:#ff5e13
+    color:#00337C
 }
 .contact-info .media-body p{
     color:#8a8a8a
@@ -1611,7 +1611,7 @@ h3{
     height:100% !important
 }
 .contact-section{
-    padding:130px 0 100px
+    padding:80px 0 0 0
 }
 @media (max-width: 991px){
     .contact-section{
@@ -1652,7 +1652,7 @@ h3{
     font-size:18px
 }
 .footer-area .single-footer-widget .social-links ul li a:hover{
-    color:#ff5e13
+    color:#00337C
 }
 .footer-area .single-footer-widget .office-location ul li strong{
     font-size:18px;
@@ -1699,7 +1699,7 @@ h3{
     font-size:16px
 }
 .footer-area .single-footer-widget ul li a:hover{
-    color:#ff5e13
+    color:#00337C
 }
 .footer-area .single-footer-widget input{
     height:40px;
@@ -1745,7 +1745,7 @@ h3{
     margin-bottom:40px
 }
 .footer-area .btn{
-    background-color:#ff5e13;
+    background-color:#00337C;
     color:#fff;
     width:49px;
     border-radius:0px;
@@ -1786,7 +1786,7 @@ h3{
     }
 }
 .footer-area .copyright_part_text a{
-    color:#ff5e13
+    color:#00337C
 }
 .footer-area .input-group{
     border:1px solid #45556a;
@@ -1847,7 +1847,7 @@ h3{
     font-weight:400
 }
 .breadcrumb .breadcrumb_iner .breadcrumb_iner_item p a{
-    color:#ff5e13
+    color:#00337C
 }
 .details-bg-1{
     background-image:url(../img/banner/details-banner.jpg)
@@ -1882,7 +1882,7 @@ h3{
 }
 .details-banner-area .details-banner-text a{
     font-family:"Rubik",sans-serif;
-    color:#ff5e13;
+    color:#00337C;
     font-size:16px;
     font-weight:400;
     display:inline-block;
@@ -2009,7 +2009,7 @@ h3{
     margin:0 8px
 }
 .team-area .single-team .team-thumb .team-hover .team-link ul li a:hover{
-    color:#ff5e13
+    color:#00337C
 }
 .team-area .single-team .team-info{
     margin-top:24px
@@ -2037,7 +2037,7 @@ h3{
     font-size:24px;
     font-family:"Rubik",sans-serif;
     font-weight:400;
-    color:#ff5e13
+    color:#00337C
 }
 @media (max-width: 767px){
     #accordion button{
@@ -2076,7 +2076,7 @@ h3{
     z-index:1
 }
 #accordion h5 button.btn.btn-link{
-    color:#ff5e13
+    color:#00337C
 }
 #accordion h5 button.btn.btn-link:after{
     position:absolute;
@@ -2085,7 +2085,7 @@ h3{
     right:0px;
     height:auto;
     font-family:'themify';
-    color:#ff5e13;
+    color:#00337C;
     font-size:18px;
     -webkit-transform:translateY(-50%);
     -ms-transform:translateY(-50%);
@@ -2139,7 +2139,7 @@ h3{
     font-size:24px
 }
 b,sup,sub,u,del{
-    color:#ff5e13
+    color:#00337C
 }
 h1{
     font-size:36px
@@ -2247,22 +2247,22 @@ h1,h2,h3,h4,h5,h6{
 }
 .genric-btn.primary{
     color:#fff;
-    background:#ff5e13;
+    background:#00337C;
     border:1px solid transparent
 }
 .genric-btn.primary:hover{
-    color:#ff5e13;
-    border:1px solid #ff5e13;
+    color:#00337C;
+    border:1px solid #00337C;
     background:#fff
 }
 .genric-btn.primary-border{
-    color:#ff5e13;
-    border:1px solid #ff5e13;
+    color:#00337C;
+    border:1px solid #00337C;
     background:#fff
 }
 .genric-btn.primary-border:hover{
     color:#fff;
-    background:#ff5e13;
+    background:#00337C;
     border:1px solid transparent
 }
 .genric-btn.success{
@@ -2376,7 +2376,7 @@ h1,h2,h3,h4,h5,h6{
 .generic-blockquote{
     padding:30px 50px 30px 30px;
     background:#f9f9ff;
-    border-left:2px solid #ff5e13
+    border-left:2px solid #00337C
 }
 .progress-table-wrap{
     overflow-x:scroll
@@ -2471,7 +2471,7 @@ h1,h2,h3,h4,h5,h6{
     position:absolute;
     width:14px;
     height:14px;
-    border:3px solid #ff5e13;
+    border:3px solid #00337C;
     background:#fff;
     top:4px;
     left:0;
@@ -2482,7 +2482,7 @@ h1,h2,h3,h4,h5,h6{
 }
 .ordered-list li{
     list-style-type:decimal-leading-zero;
-    color:#ff5e13;
+    color:#00337C;
     font-weight:500;
     line-height:1.82em !important
 }
@@ -2493,7 +2493,7 @@ h1,h2,h3,h4,h5,h6{
 .ordered-list-alpha li{
     margin-left:30px;
     list-style-type:lower-alpha;
-    color:#ff5e13;
+    color:#00337C;
     font-weight:500;
     line-height:1.82em !important
 }
@@ -2504,7 +2504,7 @@ h1,h2,h3,h4,h5,h6{
 .ordered-list-roman li{
     margin-left:30px;
     list-style-type:lower-roman;
-    color:#ff5e13;
+    color:#00337C;
     font-weight:500;
     line-height:1.82em !important
 }
@@ -2565,7 +2565,7 @@ h1,h2,h3,h4,h5,h6{
 }
 .single-input-primary:focus{
     outline:none;
-    border:1px solid #ff5e13
+    border:1px solid #00337C
 }
 .single-input-accent{
     display:block;
@@ -2619,7 +2619,7 @@ h1,h2,h3,h4,h5,h6{
     width:15px;
     height:15px;
     border-radius:50%;
-    background:#ff5e13;
+    background:#00337C;
     -webkit-transition:all 0.2s;
     -moz-transition:all 0.2s;
     -o-transition:all 0.2s;
@@ -2694,7 +2694,7 @@ h1,h2,h3,h4,h5,h6{
     left:19px
 }
 .primary-switch input:checked+label:before{
-    background:#ff5e13
+    background:#00337C
 }
 .confirm-switch{
     width:35px;
@@ -3005,11 +3005,11 @@ h1,h2,h3,h4,h5,h6{
     padding-left:20px
 }
 .default-select .nice-select .list .option.selected{
-    color:#ff5e13;
+    color:#00337C;
     background:transparent
 }
 .default-select .nice-select .list .option:hover{
-    color:#ff5e13;
+    color:#00337C;
     background:transparent
 }
 .default-select .current{
@@ -3052,11 +3052,11 @@ h1,h2,h3,h4,h5,h6{
     padding-left:45px
 }
 .form-select .nice-select .list .option.selected{
-    color:#ff5e13;
+    color:#00337C;
     background:transparent
 }
 .form-select .nice-select .list .option:hover{
-    color:#ff5e13;
+    color:#00337C;
     background:transparent
 }
 .form-select .current{

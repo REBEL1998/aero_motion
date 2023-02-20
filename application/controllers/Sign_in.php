@@ -44,8 +44,7 @@ class Sign_in extends Front_Controller {
         		'email' => $this->input->post('txtEmail'),
         		'password' => $this->input->post('txtPwd')
 			);
-				
-			
+
 			if ($this->customer_model->login($data) ) {
 				redirect('/myaccount', 'refresh');
 			}

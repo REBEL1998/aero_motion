@@ -137,25 +137,18 @@ class Category extends Admin_Controller
 	{
 		if($id) {
 
-			$catid = $id;
 			/* First check for subcategory is present or not */
-			$cat_cnt = $this->model_category->getSubCategoryCount($this->atri->de($id));
-			
-			if($cat_cnt == 0){
-				
-				$delete = $this->model_category->delete($this->atri->de($catid));
-			
-				if($delete == true) {
-					$this->session->set_flashdata('success', 'Record removed successfully.');
-				}
-				else {
-					$this->session->set_flashdata('error', 'Error occurred!!');
-				}
+			$catid = $this->atri->de($id);
+		
+			$delete = $this->model_category->delete($catid);
+	
+			if($delete == true) {
+				$this->session->set_flashdata('success', 'Record removed successfully.');
 			}
 			else {
-				$this->session->set_flashdata('error', 'Sub category is present. Please delete all subcategory first.');
+				$this->session->set_flashdata('error', 'Error occurred!!');
 			}
-			
+	
 			$url = '';
 			if($this->uri->segment('5') !== null){
 				$url = '/index/'. $this->uri->segment('5');

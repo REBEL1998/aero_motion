@@ -48,9 +48,7 @@
                                 <td class="text-center">
                                     <div class="bootstrap-modal">
                                         <a data-target="#inquiryModal-<?php echo $v['id']; ?>"   data-toggle="modal" style="cursor: pointer;">
-                                            <svg width="3em" height="3em" viewBox="0 0 16 16" class="bi bi-dot" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                                            <path fill-rule="evenodd" d="M8 9.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z"/>
-                                            </svg>
+                                            <span class="tag badge badge-warning">View Message</span>
                                         </a>
                                         <div class="modal fade" id="inquiryModal-<?php echo $v['id']; ?>" style="display: none;" aria-hidden="true">
                                             <div class="modal-dialog modal-dialog-centered" role="document">

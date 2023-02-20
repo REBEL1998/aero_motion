@@ -14,7 +14,7 @@
             <div class="layout-container">
 
                  <!-- [ Layout navbar ( Header ) ] Start -->
-                <nav class="layout-navbar navbar navbar-expand-lg align-items-lg-center bg-dark container-p-x" id="layout-navbar">
+                <nav class="layout-navbar navbar navbar-expand-lg align-items-lg-center bg-white container-p-x" id="layout-navbar" >
 
                 <!-- Brand demo (see <?php echo base_url("assets/admin/css/demo/demo.css"); ?>) -->
                 <a href="<?php echo base_url("admin/dashboard"); ?>" class="navbar-brand app-brand demo d-lg-none py-0 mr-4">

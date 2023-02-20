@@ -3,7 +3,7 @@
                 <div class="row justify-content-between">
                     <div class="col-sm-6 col-md-3 col-xl-4">
                         <div class="single-footer-widget footer_1">
-                            <a href="index.html"> <img src="img/footer-logo.png" alt=""> </a>
+                            <a href="index.html"> <img src="<?php echo base_url("assets/front-end/img/footer-logo.png"); ?>" alt="" style="width:300px;"> </a>
                             <p>Waters make fish every without firmament saw had. Morning air subdue very one. Whales grass
                                 is fish whales winged.
                             </p>
@@ -16,21 +16,9 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-sm-6 col-md-2 col-xl-2">
-                        <div class="single-footer-widget">
-                            <h4>Company</h4>
-                            <ul>
-                                <li><a href="#">About</a></li>
-                                <li><a href="#">Media</a></li>
-                                <li><a href="#">Carrier</a></li>
-                                <li><a href="#">Testimonials</a></li>
-                                <li><a href="#">Stability</a></li>
-                            </ul>
-                        </div>
-                    </div>
                     <div class="col-sm-6 col-md-3 col-xl-3">
                         <div class="single-footer-widget">
-                            <h4>Solutions</h4>
+                            <h4>Products</h4>
                             <ul>
                                 <li><a href="#">Industrial problems</a></li>
                                 <li><a href="#"> Construction solution</a></li>
@@ -41,23 +29,6 @@
                     </div>
                     <div class="col-sm-6 col-md-3 col-xl-3">
                         <div class="single-footer-widget footer_icon">
-                            <h4>Branch office</h4>
-                            <div class="office-location">
-                                <ul>
-                                    <li>
-                                        <strong>London - UK</strong>
-                                        <p>127, Manchaster city, London <br>
-                                            +008 728 362 278
-                                        </p>
-                                    </li>
-                                    <li>
-                                        <strong>New York - USA</strong>
-                                        <p>127, Manchaster city, London <br>
-                                            +008 728 362 278
-                                        </p>
-                                    </li>
-                                </ul>
-                            </div>
                         </div>
                     </div>
                 </div>
@@ -74,6 +45,12 @@
                 </div>
             </div>
         </footer>
+
+        <script type="text/javascript">
+            var currentURI = '<?php print $this->uri->uri_string(); ?>';
+            var baseURI = '<?php print base_url(); ?>';
+            var calledURI = baseURI + currentURI;
+        </script>
         <script src="<?php echo base_url("assets/front-end/js/vendor/jquery-1.12.4.min.js"); ?>"></script>
         <script src="<?php echo base_url("assets/front-end/js/popper.min.js"); ?>"></script>
         <script src="<?php echo base_url("assets/front-end/js/bootstrap.min.js"); ?>"></script>
@@ -96,5 +73,7 @@
         <script src="<?php echo base_url("assets/front-end/js/jquery.validate.min.js"); ?>"></script>
         <script src="<?php echo base_url("assets/front-end/js/mail-script.js"); ?>"></script>
         <script src="<?php echo base_url("assets/front-end/js/main.js"); ?>"></script>
+        <script src="<?php echo base_url("assets/js/contact-us.js"); ?>"></script>
+        <script src="<?php echo base_url("assets/front-end/js/sweetalert.min.js"); ?>"></script>
     </body>
 </html>

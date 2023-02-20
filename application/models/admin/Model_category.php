@@ -26,7 +26,6 @@ class Model_category extends CI_Model
 		// 	$this->db->where('level = ', '1');
 		// }
 		
-		
 		$query=$this->db->get()->result_array(); 
 		
 		
@@ -75,24 +74,7 @@ class Model_category extends CI_Model
 		$delete = $this->db->update('category');
 		return ($delete == true) ? true : false;
 	}
-	
-	public function getSubCategoryCount($catid)
-	{
-	
-		/*NOW CHECK IF ANY SUB LEVEL PRESENT THAN DO NOT DELETE */
 		
-		$this->db->select('COUNT(*)');
-		$this->db->from('category as c');
-		$this->db->where('flagdelete != ', 'D');
-		$this->db->where('parentid = ', $catid);
-		$this->db->where('level = ', '2');
-		
-		$query=$this->db->get()->row_array(); 
-		$rec_cnt = $query['COUNT(*)'];
-		
-		return $rec_cnt;
-	}
-	
 	public function updateCategoryImageName($catid = null, $imgName = null) {
 		
 		$this->db->set('imagename', $imgName);

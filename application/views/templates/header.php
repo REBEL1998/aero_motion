@@ -6,7 +6,7 @@
         <title>AERO Motion</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="shortcut icon" type="image/x-icon" href="img/favicon.png">
+        <link rel="shortcut icon" type="image/x-icon" href="<?php echo base_url("assets/front-end/img/favicon.jpeg"); ?>">
         <link rel="stylesheet" href="<?php echo base_url("assets/front-end/css/bootstrap.min.css"); ?>">
         <link rel="stylesheet" href="<?php echo base_url("assets/front-end/css/owl.carousel.min.css"); ?>">
         <link rel="stylesheet" href="<?php echo base_url("assets/front-end/css/magnific-popup.css"); ?>">
@@ -17,6 +17,7 @@
         <link rel="stylesheet" href="<?php echo base_url("assets/front-end/css/animate.css"); ?>">
         <link rel="stylesheet" href="<?php echo base_url("assets/front-end/css/slicknav.css"); ?>">
         <link rel="stylesheet" href="<?php echo base_url("assets/front-end/css/style.css"); ?>">
+        <link rel="stylesheet" href="<?php echo base_url("assets/front-end/css/sweetalert.css"); ?>">
     </head>
     <body>
     <header>
@@ -34,12 +35,36 @@
                         <div class="col-xl-10 col-lg-10">
                             <div class="main-menu d-none d-lg-block " style="text-align:right">
                                 <nav>
-                                    <ul id="navigation">
-                                        <li><a class="active" href="index.html">Home</a></li>
-                                        <li><a href="about.html">Company Profile</a></li>
-                                        <li><a href="#">Products</a></li>
-                                        <li><a href="contact.html">Contact</a></li>
-                                    </ul>
+                                    <ul id="navigation"><?php 
+                                        
+                                        $arrNavbar = [
+                                            0 => [
+                                                "title" => "Home",
+                                                "url" => base_url(""),
+                                                "urlKey" => "",
+                                            ],
+                                            1 => [
+                                                "title" => "Company Profile",
+                                                "url" => base_url("company_profile"),
+                                                "urlKey" => "company_profile",
+                                            ],
+                                            2 => [
+                                                "title" => "Products",
+                                                "url" => base_url("products"),
+                                                "urlKey" => "products",
+                                            ],
+                                            3 => [
+                                                "title" => "Contact",
+                                                "url" => base_url("contact-us"),
+                                                "urlKey" => "contact-us",
+                                            ],
+                                        ];  
+                                        
+                                        foreach($arrNavbar as $key => $arrTempNavbar) {
+                                            $strActive = $this->uri->segment(1) == 	$arrTempNavbar['urlKey'] ? "active" : ""; 					
+                                            ?><li><a class="<?php print($strActive); ?>" href="<?php echo $arrTempNavbar['url']; ?>"><?php echo $arrTempNavbar['title']; ?></a></li><?php
+                                         }
+                                        ?></ul>
                                 </nav>
                             </div>
                         </div>

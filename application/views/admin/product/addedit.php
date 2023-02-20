@@ -111,30 +111,3 @@
             </form>
         </div>
     </div>
-	
-	<script>
-			
-			
-			function addspecification(){
-				var count  = $('.contact_incress').length + 1;
-				var html = '<div class="form-group row contact_incress">';
-				html+='<label class="col-form-label col-sm-2 text-sm-right">Add Specification '+count+'</label>';
-				html+='<div class="col-sm-4">';
-				html+='<input type="text" class="form-control validate-control" value="" data-required="Y" name="txtSpecificationName[]" autocomplete="off">';
-				html+='</div>';
-				html+='<div class="col-sm-4">';
-				html+='<input type="text" class="form-control validate-control" value="" data-required="Y" name="txtSpecificationValue[]" autocomplete="off">';
-				html+='</div>';
-				html+='<div class="col-sm-1">';
-				html+='<a class="btn btn-secondary" id="remove"><i class="fas fa-minus"></i></a>';
-				html+='</div>';
-				html+= '</div>';
-				
-				$('.addContact').append(html);
-			}
-			
-			$('.addContact').on('click','#remove',function(){
-				$(this).closest('.contact_incress').remove();
-			});
-	
-	</script>

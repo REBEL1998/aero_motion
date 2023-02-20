@@ -77,3 +77,18 @@
 	</div>
 	<!-- customar project  end -->
 	</div>
+	
+	<script>
+		function cta_confirm(url = ''){
+			
+			var check = confirm("Are you sure you want delete product?");
+			if (check == true) {
+				window.location = url;
+				return true;
+			}
+			else {
+				return false;
+			}
+			
+		}
+	</script>

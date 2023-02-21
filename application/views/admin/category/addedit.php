@@ -27,6 +27,17 @@
                     </div>
                 </div>
                 <div class="form-group row">
+					<label class="col-form-label col-sm-2 text-sm-right">Image</label>
+					<div class="col-sm-10">
+						<?php if(!empty($categoryImage)){ ?>
+							<img src="<?=base_url().'assets/uploads/category/'.$categoryImage?>"width="100px" height = "100px">
+							<a href="<?=base_url('admin/category/')?>deleteimage/<?=$this->atri->en($catId)?>" class="btn btn-sm btn-danger" >Delete</a>
+						<?php } else{ ?>
+							<input type="file" name="categoryImage">
+						<?php } ?>
+					</div>
+				</div>
+                <div class="form-group row">
                     <div class="col-sm-10 ml-sm-auto">
                         <button type="submit" class="btn btn-primary">Submit</button>
                         <a href="<?php echo base_url('admin/category/') ?>" class="btn btn-warning">Back</a>

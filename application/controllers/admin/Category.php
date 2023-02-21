@@ -33,6 +33,7 @@ class Category extends Admin_Controller
 
 		$this->form_validation->set_rules('txtName', 'Name', 'trim|required');
 		
+
         if ($this->form_validation->run() == TRUE) {
             // true case
 			
@@ -52,8 +53,35 @@ class Category extends Admin_Controller
 
 			
         	$create_id = $this->model_category->create($data);
- 
+
 			if($create_id == true) {
+
+				if ( !empty($_FILES["categoryImage"]['name']) ) {
+
+					$new_name = 'category_img_'.$create_id . '_' .$_FILES["categoryImage"]['name'];
+					
+					$config['upload_path']          = './assets/uploads/category';
+					$config['allowed_types']        = 'jpg|png|jpeg|';
+					$config['max_size']             = 10000;
+					$config['file_name']            = $new_name;
+					/* $config['max_width']            = 1024;
+					$config['max_height']           = 768; */
+
+					$this->load->library('upload', $config);
+
+					if (!$this->upload->do_upload('categoryImage'))
+					{
+						$error = array('error' => $this->upload->display_errors());
+						redirect('admin/category/addedit', 'refresh');
+					}
+					else
+					{	
+						$data = array('categoryImage' => $this->upload->data());
+						/* Now update image name in category table */
+						$result = $this->model_category->updateCategoryImageName( $create_id, $data["categoryImage"]["file_name"]);
+					}
+				}
+					
 	   			    
 				$url = '';
 				if($this->uri->segment('4') !== null && $this->uri->segment('5') == null){
@@ -109,6 +137,37 @@ class Category extends Admin_Controller
 				}
 
 				$update = $this->model_category->edit($data, $id);
+
+
+				if ( !empty($_FILES['categoryImage']['name']) ){
+					$new_name = 'category_img_'.$id . '_' .$_FILES["categoryImage"]['name'];
+		
+					$config['upload_path']          = './assets/uploads/category/';
+					$config['allowed_types']        = 'jpeg|jpg|png';
+					$config['max_size']             = 10000;
+					$config['file_name']            = $new_name;
+					/* $config['max_width']            = 1024;
+					$config['max_height']           = 768; */
+
+					$this->load->library('upload', $config);
+
+					if (!$this->upload->do_upload('categoryImage'))
+					{
+							$error = array('error' => $this->upload->display_errors());
+							redirect('admin/category/edit/'.$id, 'refresh');
+					}
+					else
+					{
+							$data = array('categoryImage' => $this->upload->data());
+
+							/* Now update image name in category table */
+							$result = $this->model_category->updateCategoryImageName($id,$data["categoryImage"]["file_name"]);
+
+							//redirect('admin/category', $data);
+					}		
+					
+				}
+
 				
 				if($update == true) {
 					$this->session->set_flashdata('success', 'Record updated successfully.');
@@ -124,9 +183,11 @@ class Category extends Admin_Controller
 				$this->data['doAction'] = 'Edit';
 	            
 				$result = $this->model_category->getCategoryList($id);
-				
+		
+	        	$this->data['catId'] = $id;
 	        	$this->data['txtName'] = $result[0]['name'];
 	        	$this->data['txtShortDesc'] = $result[0]['desc'];
+				$this->data['categoryImage'] = $result[0]['imagename'];
 
 				$this->render_template('admin/category/addedit', $this->data);	
 	        }	

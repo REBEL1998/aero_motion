@@ -10,6 +10,7 @@ CREATE DATABASE aero_motion;
     `status` char(1) NOT NULL DEFAULT 'Y',
     `desc` TEXT DEFAULT NULL,
     `url_key` varchar(255) NOT NULL,
+    `image` TEXT DEFAULT NULL,
     `rmdate` date DEFAULT NULL,
     `flagdelete` char(1) DEFAULT '',
     PRIMARY KEY (id),
@@ -17,7 +18,7 @@ CREATE DATABASE aero_motion;
     KEY (`url_key`),
     KEY (`rmdate`),
     KEY (`flagdelete`)
-  )
+  );
 
 -- --------------------------------------------------------
 
@@ -135,3 +136,10 @@ CREATE TABLE `contactus` (
   KEY `rmdate` (`rmdate`),
   KEY `flagdelete` (`flagdelete`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+
+
+=> 21-02-23
+
+ALTER TABLE category ADD COLUMN imagename TEXT DEFAULT NULL AFTER url_key;

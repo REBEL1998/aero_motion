@@ -6,7 +6,7 @@
         <title>AERO Motion</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="shortcut icon" type="image/x-icon" href="<?php echo base_url("assets/front-end/img/favicon.jpeg"); ?>">
+        <link rel="shortcut icon" type="image/x-icon" href="<?php echo base_url("assets/front-end/img/favicon.png"); ?>">
         <link rel="stylesheet" href="<?php echo base_url("assets/front-end/css/bootstrap.min.css"); ?>">
         <link rel="stylesheet" href="<?php echo base_url("assets/front-end/css/owl.carousel.min.css"); ?>">
         <link rel="stylesheet" href="<?php echo base_url("assets/front-end/css/magnific-popup.css"); ?>">

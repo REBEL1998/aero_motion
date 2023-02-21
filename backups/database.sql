@@ -48,7 +48,7 @@ create table `users` (
 --
 
 INSERT INTO `users` (`id`, `username`, `password`, `email`, `firstname`, `lastname`) VALUES
-(1, 'admin', '$2y$10$4OjgXyQY0UGKESMujlH2n.gkXlo.eIhjkgMnGth5T0JYrvhWB9JgC', 'admin@bootsback.com', 'Nilesh', 'Panchal');
+(1, 'admin', '$2y$10$4OjgXyQY0UGKESMujlH2n.gkXlo.eIhjkgMnGth5T0JYrvhWB9JgC', 'admin@admin.com', 'admin', 'admin');
 
 CREATE TABLE `customer` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
@@ -143,3 +143,30 @@ CREATE TABLE `contactus` (
 => 21-02-23
 
 ALTER TABLE category ADD COLUMN imagename TEXT DEFAULT NULL AFTER url_key;
+
+
+
+CREATE TABLE `imgvideodocs` (
+  `id` bigint(20) NOT NULL auto_increment,
+  `relatedid` bigint(20) UNSIGNED NOT NULL DEFAULT 0,
+  `typex` char(3) DEFAULT NULL,
+  `parentcode` char(2) DEFAULT NULL,
+  `code` char(2) DEFAULT NULL,
+  `filename` varchar(255) DEFAULT NULL,
+  `categoryid` bigint(20) UNSIGNED NOT NULL DEFAULT 0,
+  `shortdesc` mediumtext DEFAULT NULL,
+  `desc` mediumtext DEFAULT NULL,
+  `flagdelete` char(2) NOT NULL DEFAULT 'N',
+  `addedby` bigint(20) UNSIGNED NOT NULL DEFAULT 0,
+  `dateadded` datetime DEFAULT NULL,
+  `deletedby` bigint(20) UNSIGNED NOT NULL DEFAULT 0,
+  PRIMARY KEY (`id`),
+   KEY `relatedid` (`relatedid`),
+   KEY `typex` (`typex`),
+   KEY `addedby` (`addedby`),
+   KEY `code` (`code`),
+   KEY `parentcode` (`parentcode`),
+   KEY `flagdelete` (`flagdelete`),
+   KEY `dateadded` (`dateadded`),
+   KEY `deletedby` (`deletedby`)
+);

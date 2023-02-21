@@ -13,6 +13,7 @@ class Product extends Admin_Controller
 
 		$this->load->model('admin/model_product');
 		$this->load->model('admin/model_category');
+		$this->load->model('admin/model_attched');
 		$this->load->library('commonvar');
 		
 		
@@ -251,6 +252,78 @@ class Product extends Admin_Controller
 	}
 	
 	
+	public function attched($id = '')
+	{
+		$id = !empty($this->input->get('propertyId')) ? $this->atri->de($this->input->get('propertyId')) : $this->atri->de($id);
+	
+		if (!empty($this->input->get('propertyId'))) {
+			
+			if (!empty($_FILES['file'])){
+				// for($i = 0; $i<$count ; $i++){
+					if (!empty($_FILES['file']['name'])){
+						$new_name = 'product_img_'.$id. '_' .$_FILES["file"]['name'];
+			
+						$config['upload_path']          = './assets/admin/uploads/product/';
+						$config['allowed_types']        = 'jpeg|jpg|png|pdf|doc';
+						$config['max_size']             = 10000;
+						$config['file_name']            = $new_name;
+						/* $config['max_width']            = 1024;
+						$config['max_height']           = 768; */
+						$isImage = str_contains( $_FILES['file']['type'], 'image') ? true : false;
+						
+						$this->load->library('upload', $config);
+						if (!$this->upload->do_upload('file'))
+						{
+								$error = array('error' => $this->upload->display_errors());
+								echo $error;
+								// redirect('admin/product/addedit', 'refresh');
+						}
+						else
+						{
+								$data = array(
+									'relatedid' => $id,
+									'typex' =>$isImage ? 'IMG' : 'DOC',
+									'parentcode' => 'PR',
+									'code' => 'PR',
+									'filename' => $new_name,
+									'categoryid' => 0,
+									'shortdesc' => $isImage ? 'Image Upload'.$new_name : "This is doc",
+									'desc' =>$isImage ? 'Image Upload'.$new_name : "This is doc",
+									'addedby' => 1,
+									'dateadded' => UTCDATETIME
+								);
+
+								/* Now update image name in category table */
+								$result = $this->model_attched->insertAttchedFile($data);
+								$flagAttched[] = true;
+
+								//redirect('admin/category', $data);
+						}
+					}				
+				
+			}
+			// if($count == count($flagAttched)) {
+				$this->session->set_flashdata('success', 'Record updated successfully.');
+				echo "done";
+				// redirect('admin/fileUpload/'.$this->atri->en($id), 'refresh');
+			// }
+			// else {
+				// $this->session->set_flashdata('errors', 'Error occurred!!');
+				// redirect('admin/fileUpload/'.$this->atri->en($id), 'refresh');
+			// }
+		
+		}
+		else {
+			$this->data['doAction'] = 'Edit';
+			$list_data = $this->model_attched->getAttchedList($id);
+	
+			$this->data['prodId'] = $id;
+			$this->data['list_data'] = $list_data;
+			$this->render_template('admin/fileUpload/index', $this->data);	
+		}
+	}
+	
+	
 	public function status($id)
 	{
 		if($id) {
@@ -284,6 +357,23 @@ class Product extends Admin_Controller
 				$this->session->set_flashdata('error', 'Error occurred!!');
 			}
 			redirect('admin/product/edit/'.$id, 'refresh');
+
+		}
+	}
+	
+	
+	public function deleteAttchedImage($id)
+	{
+		if($id) {
+			$delete = $this->model_attched->deleteAttchedImage($this->atri->de($id));
+		
+			if($delete == true) {
+				$this->session->set_flashdata('success', 'Status updated successfully.');
+			}
+			else {
+				$this->session->set_flashdata('error', 'Error occurred!!');
+			}
+			redirect('admin/product/attched/'.$this->atri->en($delete), 'refresh');
 
 		}
 	}

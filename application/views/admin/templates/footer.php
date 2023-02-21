@@ -44,6 +44,8 @@
     <script src="<?php echo base_url("assets/admin/libs/chart-am4/core.js") ?>"></script>
     <script src="<?php echo base_url("assets/admin/libs/chart-am4/charts.js") ?>"></script>
     <script src="<?php echo base_url("assets/admin/libs/chart-am4/animated.js") ?>"></script>
+    <script src="<?php echo base_url("assets/admin/libs/dropzone/dropzone.js") ?>"></script>
+    <script src="<?php echo base_url("assets/admin/js/pages/forms_file-upload.js") ?>"></script>
 
     <!-- Demo -->
     <script src="<?php echo base_url("assets/admin/js/demo.js") ?>"></script>

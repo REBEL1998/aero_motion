@@ -29,4 +29,5 @@
     <!-- Libs -->
     <link rel="stylesheet" href="<?php echo base_url("assets/admin/libs/perfect-scrollbar/perfect-scrollbar.css"); ?>">
     <link rel="stylesheet" href="<?php echo base_url("assets/admin/libs/flot/flot.css"); ?>">
+	<link rel="stylesheet" href="<?php echo base_url("assets/admin/libs/dropzone/dropzone.css");?>">
 </head>

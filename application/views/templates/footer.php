@@ -20,10 +20,11 @@
                         <div class="single-footer-widget">
                             <h4>Products</h4>
                             <ul>
-                                <li><a href="#">Industrial problems</a></li>
-                                <li><a href="#"> Construction solution</a></li>
-                                <li><a href="#">Car manufacturing</a></li>
-                                <li><a href="#">Mechanical problems</a></li>
+                                <?php if ( !empty($arrCategoryData) ){ ?>
+                                 <?php foreach($arrCategoryData as $arrTempData){ ?>
+                                    <li><a href="<?php echo base_url("category/".$arrTempData['url_key']); ?>"><?php echo $arrTempData['name']; ?></a></li>
+                                    <?php } ?>
+                                <?php } ?>
                             </ul>
                         </div>
                     </div>

@@ -70,34 +70,36 @@ class Product extends Admin_Controller
  
 			if($create_id == true) {
 				
-				
-				$new_name = 'product_img_'.$create_id . '_' .$_FILES["productImage"]['name'];
-	
-				$config['upload_path']          = './assets/admin/uploads/product';
-                $config['allowed_types']        = 'jpg|png|jpeg|';
-                $config['max_size']             = 10000;
-				$config['file_name']            = $new_name;
-                /* $config['max_width']            = 1024;
-                $config['max_height']           = 768; */
+				if ( !empty($_FILES["productImage"]['name']) ) {
 
-                $this->load->library('upload', $config);
-
-                if (!$this->upload->do_upload('productImage'))
-                {
-                        $error = array('error' => $this->upload->display_errors());
-		
-                        redirect('admin/product/addedit', 'refresh');
-                }
-                else
-                {
+					$new_name = 'product_img_'.$create_id . '_' .$_FILES["productImage"]['name'];
+					
+					$config['upload_path']          = './assets/admin/uploads/product';
+					$config['allowed_types']        = 'jpg|png|jpeg|';
+					$config['max_size']             = 10000;
+					$config['file_name']            = $new_name;
+					/* $config['max_width']            = 1024;
+					$config['max_height']           = 768; */
+					
+					$this->load->library('upload', $config);
+					
+					if (!$this->upload->do_upload('productImage'))
+					{
+						$error = array('error' => $this->upload->display_errors());
 						
-                        $data = array('productImage' => $this->upload->data());
+						redirect('admin/product/addedit', 'refresh');
+					}
+					else
+					{
+							
+						$data = array('productImage' => $this->upload->data());
 
 						/* Now update image name in category table */
 						$result = $this->model_product->updateProductImageName($create_id,$data["productImage"]["file_name"]);
-
-                        //redirect('admin/category', $data);
-                }
+						
+						//redirect('admin/category', $data);
+					}
+				}
 	   			    
 				$url = '';
 				if($this->uri->segment('4') !== null && $this->uri->segment('5') == null){

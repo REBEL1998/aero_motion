@@ -18,6 +18,8 @@
         <link rel="stylesheet" href="<?php echo base_url("assets/front-end/css/slicknav.css"); ?>">
         <link rel="stylesheet" href="<?php echo base_url("assets/front-end/css/style.css"); ?>">
         <link rel="stylesheet" href="<?php echo base_url("assets/front-end/css/sweetalert.css"); ?>">
+        <link rel="stylesheet" href="<?php echo base_url("assets/front-end/css/style-freedom.css"); ?>">
+        <link rel="stylesheet" href="<?php echo base_url("assets/front-end/css/theme.css"); ?>">
     </head>
     <body>
     <header>
@@ -59,10 +61,19 @@
                                                 "urlKey" => "contact-us",
                                             ],
                                         ];  
-                                        
+                                
                                         foreach($arrNavbar as $key => $arrTempNavbar) {
                                             $strActive = $this->uri->segment(1) == 	$arrTempNavbar['urlKey'] ? "active" : ""; 					
-                                            ?><li><a class="<?php print($strActive); ?>" href="<?php echo $arrTempNavbar['url']; ?>"><?php echo $arrTempNavbar['title']; ?></a></li><?php
+                                            ?><li><a class="<?php print($strActive); ?>" href="<?php echo $arrTempNavbar['url']; ?>"><?php echo $arrTempNavbar['title']; ?></a>
+
+                                            <?php if ( $arrTempNavbar['urlKey'] == 'products' && !empty($arrCategoryData) ){ ?>
+                                                <ul class="submenu">
+                                                <?php foreach($arrCategoryData as $arrTempData){ ?>
+                                                    <li><a href="<?php echo base_url("category/".$arrTempData['url_key']); ?>"><?php echo $arrTempData['name']; ?></a></li>
+                                                    <?php } ?>
+                                                </ul>
+                                            <?php } ?>
+                                            </li><?php
                                          }
                                         ?></ul>
                                 </nav>

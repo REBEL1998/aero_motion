@@ -7,7 +7,7 @@ class Model_product extends CI_Model
 		parent::__construct();
 	}
 
-	public function getProductList($prodId = null) 
+	public function getProductList($prodId = null, $arrParams = []) 
 	{
 		
 		$this->db->select([
@@ -28,8 +28,23 @@ class Model_product extends CI_Model
 		$this->db->order_by('p.id', 'DESC');
 
 		if(isset($prodId) && $prodId != ''){
-			$this->db->where('p.id = ', $prodId);
-		}	
+			$this->db->where('p.id = ', $prodId);	
+		}
+
+		foreach ( $arrParams as $key => $value ) {
+			switch( strtoupper($key) ){
+				case "CATID" :
+					if ( !empty($value) ) {
+						$this->db->where('p.catId = ', $value);
+					}	
+				break;
+				case "PRODUCTID" :
+					if ( !empty($value) ) {
+						$this->db->where('p.id = ', $value);
+					}	
+				break;
+			}
+		}
 		
 		$query=$this->db->get()->result_array(); 
 		

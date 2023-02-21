@@ -38,8 +38,7 @@ class Front_Controller extends MY_Controller
 		// default array set for frontend
 		$this->data['yesNo'] = $this->commonvar->yesno();
         $this->data['custType'] = $this->commonvar->getCustomerType();
-		$this->data['sidebarCate'] = $this->category->getLevelWiseCategory();
-		
+		$this->data['arrCategoryData'] = $this->category->getCategoryList(null,true);
 	}
 	
 	public function display_template($page = null, $data = array())

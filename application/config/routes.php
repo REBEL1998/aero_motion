@@ -69,7 +69,7 @@ $route['admin/login'] = 'admin/auth/login';
 $route['404_override'] = 'Eerror_404';
 $route['translate_uri_dashes'] = false;
 $route['technician-setup'] = '/Technician_detail';
-$route['technician-setup/(:any)'] = '/Technician_detail/$1';
+$route['category/(:any)'] = '/Front_category/index/$1';
 
 
 // contact us

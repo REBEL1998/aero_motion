@@ -128,195 +128,24 @@
             <div class="col-xl-4 col-md-6">
                 <div class="section-title text-white mb-65 ml-80">
                     <h3>Take a look around <br>
-                        our projects
+                        our products
                     </h3>
                     <p>Waters make fish every without firmament saw had. <br> Morning air subdue.</p>
-                    <div class="more-project">
-                        <a href="#">More Projects</a>
-                    </div>
                 </div>
             </div>
             <div class="col-xl-6 col-md-6">
                 <div class="project-active owl-carousel">
-                    <div class="single-project">
-                        <div class="project-thumb">
-                            <img src="<?php echo base_url("assets/front-end/img/project/1.jpg"); ?>" alt="">
-                        </div>
-                        <div class="project-info">
-                            <span>Industrial construction</span>
-                            <h3>Research and development center</h3>
-                        </div>
-                    </div>
-                    <div class="single-project">
-                        <div class="project-thumb">
-                            <img src="<?php echo base_url("assets/front-end/img/project/1.jpg"); ?>" alt="">
-                        </div>
-                        <div class="project-info">
-                            <span>Machine engineering</span>
-                            <h3>Project of technological park</h3>
-                        </div>
-                    </div>
-                    <div class="single-project">
-                        <div class="project-thumb">
-                            <img src="<?php echo base_url("assets/front-end/img/project/1.jpg"); ?>" alt="">
-                        </div>
-                        <div class="project-info">
-                            <span>Industrial construction</span>
-                            <h3>Research and development center</h3>
-                        </div>
-                    </div>
-                    <div class="single-project">
-                        <div class="project-thumb">
-                            <img src="<?php echo base_url("assets/front-end/img/project/1.jpg"); ?>" alt="">
-                        </div>
-                        <div class="project-info">
-                            <span>Machine engineering</span>
-                            <h3>Project of technological park</h3>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-<div class="about-area section-padding">
-    <div class="pattent-bg-img">
-        <img src="<?php echo base_url("assets/front-end/img/about/pattern.png"); ?>" alt="">
-    </div>
-    <div class="container">
-        <div class="row align-items-center">
-            <div class="col-xl-7 col-md-12 col-lg-6">
-                <div class="about-thumb">
-                    <img src="<?php echo base_url("assets/front-end/img/about/about.jpg"); ?>" alt="">
-                    <a class="video-icon popup-video" href="https://www.youtube.com/watch?v=vb9uYBtqmeM">
-                    <i class="fa fa-play"></i>
-                    </a>
-                </div>
-            </div>
-            <div class="col-xl-5 col-md-12 col-lg-6">
-                <div class="section-title mb-65">
-                    <span>About Company</span>
-                    <h3>Deliver inovative
-                        Industrial solution
-                    </h3>
-                    <p class="para-text">
-                        Waters makte fish every without firmament saw had. Morning air subdue very one. Whales grass
-                        is fish whales winged.
-                    </p>
-                    <a href="#" class="boxed-btn">Learn More</a>
-                </div>
-            </div>
-        </div>
-        <div class="about-pro-active owl-carousel pt-120">
-            <div class="row align-items-center">
-                <div class="col-xl-6 col-md-6 col-lg-6 ">
-                    <div class="about-info-text">
-                        <div class="quote">
-                            <i class="Flaticon flaticon-quote"></i>
-                        </div>
-                        <div class="about-ratting">
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                        </div>
-                        <p class="about-text">Waters make fish every without firmament saw had. Morning air subdue
-                            very one. Whales grass is fish whales winged.
-                        </p>
-                        <div class="about-author">
-                            <div class="autor-thumb">
-                                <img src="<?php echo base_url("assets/front-end/img/about/about-author.jpg"); ?>" alt="">
+                    <?php foreach($arrProductData as $arrTempProduct) { ?>
+                        <div class="single-project">
+                            <div class="project-thumb">
+                                <img src="<?=base_url('assets/admin/uploads/product/'.$arrTempProduct['productImage']);?>" alt="" style="width:350px;height:350px">
                             </div>
-                            <div class="auhor-text">
-                                <span>Jon Snow</span>
-                                <p>Business ownner</p>
+                            <div class="project-info">
+                                <span><?php echo $arrTempProduct['catName']; ?></span>
+                                <h3><?php echo $arrTempProduct['prodName']; ?></h3>
                             </div>
                         </div>
-                    </div>
-                </div>
-                <div class="col-xl-5 offset-xl-1 col-md-6">
-                    <div class="about-review">
-                        <img src="<?php echo base_url("assets/front-end/img/about/about-project.jpg"); ?>" alt="">
-                        <div class="project-review">
-                            <h3>350+</h3>
-                            <p>Positive review</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="row  align-items-center">
-                <div class="col-xl-6 col-md-6">
-                    <div class="about-info-text">
-                        <div class="quote">
-                            <i class="Flaticon flaticon-quote"></i>
-                        </div>
-                        <div class="about-ratting">
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                        </div>
-                        <p class="about-text">Waters make fish every without firmament saw had. Morning air subdue
-                            very one. Whales grass is fish whales winged.
-                        </p>
-                        <div class="about-author">
-                            <div class="autor-thumb">
-                                <img src="<?php echo base_url("assets/front-end/img/about/about-author.jpg"); ?>" alt="">
-                            </div>
-                            <div class="auhor-text">
-                                <span>Jon Snow</span>
-                                <p>Business ownner</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-5 offset-xl-1 col-md-6">
-                    <div class="about-review">
-                        <img src="<?php echo base_url("assets/front-end/img/about/about-project.jpg"); ?>" alt="">
-                        <div class="project-review">
-                            <h3>350+</h3>
-                            <p>Positive review</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="row align-items-center">
-                <div class="col-xl-6 col-md-6">
-                    <div class="about-info-text">
-                        <div class="quote">
-                            <i class="Flaticon flaticon-quote"></i>
-                        </div>
-                        <div class="about-ratting">
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                        </div>
-                        <p class="about-text">Waters make fish every without firmament saw had. Morning air subdue
-                            very one. Whales grass is fish whales winged.
-                        </p>
-                        <div class="about-author">
-                            <div class="autor-thumb">
-                                <img src="<?php echo base_url("assets/front-end/img/about/about-author.jpg"); ?>" alt="">
-                            </div>
-                            <div class="auhor-text">
-                                <span>Jon Snow</span>
-                                <p>Business ownner</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-5 offset-xl-1 col-md-6">
-                    <div class="about-review">
-                        <img src="<?php echo base_url("assets/front-end/img/about/about-project.jpg"); ?>" alt="">
-                        <div class="project-review">
-                            <h3>350+</h3>
-                            <p>Positive review</p>
-                        </div>
-                    </div>
+                    <?php } ?>
                 </div>
             </div>
         </div>
@@ -334,7 +163,7 @@
                     fish <br> whales winged.
                 </p>
                 <div class="cta-btn">
-                    <a class="boxed-btn2 black-bg" href="#">Discuss now <i class="Flaticon flaticon-right-arrow"></i></a>
+                    <a class="boxed-btn2 black-bg" href="<?php echo base_url('contact-us'); ?>">Discuss now <i class="Flaticon flaticon-right-arrow"></i></a>
                 </div>
             </div>
         </div>

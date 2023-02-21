@@ -2383,8 +2383,8 @@ h1,h2,h3,h4,h5,h6{
 }
 .progress-table{
     background:#f9f9ff;
-    padding:15px 0px 30px 0px;
-    min-width:800px
+    padding:10px 0px 10px 0px;
+    min-width:600px
 }
 .progress-table .serial{
     width:11.83%;
@@ -2405,12 +2405,13 @@ h1,h2,h3,h4,h5,h6{
 }
 .progress-table .table-head .serial,.progress-table .table-head .country,.progress-table .table-head .visit,.progress-table .table-head .percentage{
     color:#415094;
-    line-height:40px;
+    line-height:10px;
     text-transform:uppercase;
-    font-weight:500
+    font-weight:500;
+    padding:10px 0;
 }
 .progress-table .table-row{
-    padding:15px 0;
+    padding:10px 0;
     border-top:1px solid #edf3fd;
     display:flex
 }

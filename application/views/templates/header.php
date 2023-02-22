@@ -30,7 +30,7 @@
                         <div class="col-xl-2 col-lg-2">
                             <div class="logo-img">
                                 <a href="<?php echo base_url(); ?>">
-                                    <img src="<?php echo base_url("assets/front-end/img/logo.png"); ?>" alt="" style="width: 170px;">
+                                    <img src="<?php echo base_url("assets/front-end/img/logo.png"); ?>" alt="" style="width: 200px;">
                                 </a>
                             </div>
                         </div>
@@ -67,7 +67,7 @@
                                             ?><li><a class="<?php print($strActive); ?>" href="<?php echo $arrTempNavbar['url']; ?>"><?php echo $arrTempNavbar['title']; ?></a>
 
                                             <?php if ( $arrTempNavbar['urlKey'] == 'products' && !empty($arrCategoryData) ){ ?>
-                                                <ul class="submenu">
+                                                <ul class="submenu text-left">
                                                 <?php foreach($arrCategoryData as $arrTempData){ ?>
                                                     <li><a href="<?php echo base_url("category/".$arrTempData['url_key']); ?>"><?php echo $arrTempData['name']; ?></a></li>
                                                     <?php } ?>

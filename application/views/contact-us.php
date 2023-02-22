@@ -76,5 +76,5 @@
             </div>
         </div>
     </div>
-    <iframe class="mt-3" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d14687.144750695454!2d72.6757032!3d23.0316215!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xebb501ecc6ce5cb8!2sSTAR%20Motion%20Control!5e0!3m2!1sen!2sin!4v1594633344078!5m2!1sen!2sin" width="100%" height="600" frameborder="0" style="border: 0px; pointer-events: none;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+    <iframe style="display:none" class="mt-3" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d14687.144750695454!2d72.6757032!3d23.0316215!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xebb501ecc6ce5cb8!2sSTAR%20Motion%20Control!5e0!3m2!1sen!2sin!4v1594633344078!5m2!1sen!2sin" width="100%" height="600" frameborder="0" style="border: 0px; pointer-events: none;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
 </section>

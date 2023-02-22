@@ -108,10 +108,13 @@ h3{
     background:#f5f5f5
 }
 .bg-img-1{
-    background-image:url(../img/slider/slider-img-1.jpg)
+    background-image:url(../img/background-img/bg-img-1.jpg)
 }
 .bg-img-2{
     background-image:url(../img/background-img/bg-img-2.jpg)
+}
+.bg-img-3{
+    background-image:url(../img/background-img/bg-img-3.jpg)
 }
 .cta-bg-1{
     background-image:url(../img/background-img/bg-img-3.jpg)
@@ -387,9 +390,9 @@ h3{
 }
 .header-area .main-header-area .main-menu ul li a{
     color:#191d34;
-    font-size:16px;
+    font-size:20px;
     text-transform:capitalize;
-    font-weight:400;
+    font-weight:450;
     display:inline-block;
     padding:35px 30px 35px 30px ;
     font-family:"Rubik",sans-serif;
@@ -2465,6 +2468,7 @@ h1,h2,h3,h4,h5,h6{
 .unordered-list li{
     position:relative;
     padding-left:30px;
+    padding-top:20px;
     line-height:1.82em !important
 }
 .unordered-list li:before{
@@ -2472,11 +2476,12 @@ h1,h2,h3,h4,h5,h6{
     position:absolute;
     width:14px;
     height:14px;
-    border:3px solid #00337C;
+    border:1px solid #00337C;
     background:#fff;
-    top:4px;
+    top:26px;
     left:0;
-    border-radius:50%
+    line-height: 1.4;
+    border-radius:50%;
 }
 .ordered-list{
     margin-left:30px

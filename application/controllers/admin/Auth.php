@@ -85,35 +85,23 @@ class Auth extends Admin_Controller
 
         if ($this->form_validation->run() == true) {
 
-             // true case
-             $email_exists = $this->model_auth->check_email($this->input->post('email'));
+            $data = array(
+                'username' => $this->input->post('txtUsername'),
+                'password' => password_hash($this->input->post('txtPassword'), PASSWORD_DEFAULT),
+                // 'usergroupid' => $this->input->post('selUserGroup'),
+                'email' => $this->input->post('txtEmail'),
+                'firstname' => $this->input->post('txtFirstName'),
+                'lastname' => $this->input->post('txtLastName'),
+            );
 
-             if ($email_exists == true) { 
-                $this->session->set_flashdata('errors', 'Emain already Exist.');
+            $create_id = $this->model_user->create($data);
+
+            if ($create_id == true) {
+                $this->load->view('admin/login');
+            } else {
+                $this->session->set_flashdata('errors', 'Error occurred!!');
                 $this->load->view('admin/create_admin_user');
-             }
-             else {
-
-                 $data = array(
-                     'username' => $this->input->post('txtUsername'),
-                     'password' => password_hash($this->input->post('txtPassword'), PASSWORD_DEFAULT),
-                     // 'usergroupid' => $this->input->post('selUserGroup'),
-                     'email' => $this->input->post('txtEmail'),
-                     'firstname' => $this->input->post('txtFirstName'),
-                     'lastname' => $this->input->post('txtLastName'),
-                 );
-     
-                 $create_id = $this->model_user->create($data);
-     
-                 if ($create_id == true) {
-                     $this->load->view('admin/login');
-                 } else {
-                     $this->session->set_flashdata('errors', 'Error occurred!!');
-                     $this->load->view('admin/create_admin_user');
-                 }
-             }
-
-
+            }
         } else {
             // false case
             $this->load->view('admin/create_admin_user');

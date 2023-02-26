@@ -25,8 +25,6 @@
     <link rel="stylesheet" href="<?php echo base_url("assets/admin/css/shreerang-material.css"); ?>">
     <link rel="stylesheet" href="<?php echo base_url("assets/admin/css/uikit.css") ;?>">
 
-    <!-- Libs -->
-    <link rel="stylesheet" href="<?php echo base_url("assets/admin/libs/perfect-scrollbar/perfect-scrollbar.css"); ?>">
     <!-- Page -->
     <link rel="stylesheet" href="<?php echo base_url("assets/admin/css/pages/authentication.css"); ?>">
 </head>
@@ -81,6 +79,12 @@
                         </div>
                         <div class="d-flex justify-content-between align-items-center m-0">
                             <button type="submit" class="btn btn-primary align-items-center">Login In</button>
+
+                            <?php 
+                            /* 
+                            <a href ="<?php echo base_url("admin/create_admin_user")?>" class="btn btn-success align-items-center">Create</a>
+                            */
+                            ?>                            
                         </div>
                     </form>
                     <!-- [ Form ] End -->
@@ -92,15 +96,10 @@
     <!-- / Content -->
 
     <!-- Core scripts -->
-    <script src="<?php echo base_url("assets/admin/js/pace.js"); ?>"></script>
     <script src="<?php echo base_url("assets/admin/js/jquery-3.3.1.min.js"); ?>"></script>
-    <script src="<?php echo base_url("assets/admin/libs/popper/popper.js"); ?>"></script>
     <script src="<?php echo base_url("assets/admin/js/bootstrap.js"); ?>"></script>
-    <script src="<?php echo base_url("assets/admin/js/sidenav.js"); ?>"></script>
     <script src="<?php echo base_url("assets/admin/js/layout-helpers.js"); ?>"></script>
     <script src="<?php echo base_url("assets/admin/js/material-ripple.js"); ?>"></script>
-    <!-- Libs -->
-    <script src="<?php echo base_url("assets/admin/libs/perfect-scrollbar/perfect-scrollbar.js"); ?>"></script>
    
 </body>
 </html>

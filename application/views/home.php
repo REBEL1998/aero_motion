@@ -33,37 +33,7 @@
     </div>
 </div>
 
-<div class="brand-area gray-bg">
-    <div class="container">
-        <div class="row">
-            <div class="col-xl-12">
-                <div class="brand-active owl-carousel">
-                    <div class="single-brand">
-                        <img src="<?php echo base_url("assets/front-end/img/brand/1.png"); ?>" alt="">
-                    </div>
-                    <div class="single-brand">
-                        <img src="<?php echo base_url("assets/front-end/img/brand/2.png"); ?>" alt="">
-                    </div>
-                    <div class="single-brand">
-                        <img src="<?php echo base_url("assets/front-end/img/brand/3.png"); ?>" alt="">
-                    </div>
-                    <div class="single-brand">
-                        <img src="<?php echo base_url("assets/front-end/img/brand/4.png"); ?>" alt="">
-                    </div>
-                    <div class="single-brand">
-                        <img src="<?php echo base_url("assets/front-end/img/brand/5.png"); ?>" alt="">
-                    </div>
-                    <div class="single-brand">
-                        <img src="<?php echo base_url("assets/front-end/img/brand/6.png"); ?>" alt="">
-                    </div>
-                    <div class="single-brand">
-                        <img src="<?php echo base_url("assets/front-end/img/brand/4.png"); ?>" alt="">
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
+
 
 <div class="project-area bg-img-2 overlay">
     <div class="container-fluid p-lg-0">

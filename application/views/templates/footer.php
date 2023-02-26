@@ -76,5 +76,16 @@
         <script src="<?php echo base_url("assets/front-end/js/main.js"); ?>"></script>
         <script src="<?php echo base_url("assets/js/contact-us.js"); ?>"></script>
         <script src="<?php echo base_url("assets/front-end/js/sweetalert.min.js"); ?>"></script>
+        <script src="<?php echo base_url("assets/js/common.js"); ?>"></script>
+
+        <?php
+
+        if(!empty($arrJs)){
+            foreach($arrJs as $footer_js_file){
+                echo '<script src="'.$footer_js_file.'"></script>';
+            }    
+        }
+        
+        ?>
     </body>
 </html>

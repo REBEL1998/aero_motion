@@ -18,7 +18,7 @@
                 <h2 class="contact-title text-center">Get in Touch with AERO Motion</h2>
             </div>
             <div class="col-lg-12">
-                <form id="contact-form" class="form-contact contact_form" action="/contact-us" method="post">
+                <form id="contact-form" class="form-contact contact_form" action="<?php echo base_url("contact-us"); ?>" method="post">
                     <div class="row" >
                         <div class="col-sm-6">
                             <div class="form-group">
@@ -27,7 +27,7 @@
                         </div>
                         <div class="col-sm-6">
                             <div class="form-group">
-                                <input type="text" name="txtPhoneNum" id="txtPhoneNum" value="" placeholder="Phone" class="form-control valid" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter Phone'" placeholder="Enter Phone">
+                                <input type="number" name="txtPhoneNum" id="txtPhoneNum" value="" placeholder="Phone" class="form-control valid" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter Phone'" placeholder="Enter Phone">
                             </div>
                         </div>
                         <div class="col-12">
@@ -42,7 +42,7 @@
                         </div>
                         <div class="col-12">
                             <div class="form-group">
-                                <textarea class="form-control w-100" name="txtMessage" id="txtMessage" cols="30" rows="9" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter Message'" placeholder="NaEnter Messageme"></textarea>
+                                <textarea class="form-control w-100" name="txtMessage" id="txtMessage" cols="30" rows="9" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter Message'" placeholder="Enter Message"></textarea>
                             </div>
                         </div>
                         <div class="col-12">
@@ -76,5 +76,4 @@
             </div>
         </div>
     </div>
-    <iframe style="display:none" class="mt-3" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d14687.144750695454!2d72.6757032!3d23.0316215!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xebb501ecc6ce5cb8!2sSTAR%20Motion%20Control!5e0!3m2!1sen!2sin!4v1594633344078!5m2!1sen!2sin" width="100%" height="600" frameborder="0" style="border: 0px; pointer-events: none;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
 </section>

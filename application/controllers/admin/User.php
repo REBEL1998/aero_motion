@@ -43,7 +43,7 @@ class User extends Admin_Controller
         if ($this->form_validation->run() == true) {
 			
 			$access = $this->input->post('chkAccess');
-
+ 
             $data = array(
                 'username' => $this->input->post('txtUsername'),
                 'password' => password_hash($this->input->post('txtPassword'), PASSWORD_DEFAULT),

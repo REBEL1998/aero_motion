@@ -20,6 +20,16 @@
         <link rel="stylesheet" href="<?php echo base_url("assets/front-end/css/sweetalert.css"); ?>">
         <link rel="stylesheet" href="<?php echo base_url("assets/front-end/css/style-freedom.css"); ?>">
         <link rel="stylesheet" href="<?php echo base_url("assets/front-end/css/theme.css"); ?>">
+
+        <?php 
+        
+        if(!empty($arrCss)){ 
+            foreach($arrCss as $header_css_file){
+                echo '<link href="'.$header_css_file.'" rel="stylesheet" type="text/css"></link>';
+            }    
+        }
+        ?>
+
     </head>
     <body>
     <header>
@@ -55,12 +65,12 @@
                                                 "url" => base_url("products"),
                                                 "urlKey" => "products",
                                             ],
-											3 => [
-                                                "title" => "Products 1",
-                                                "url" => base_url("products1"),
-                                                "urlKey" => "products1",
-                                            ],
-                                            4 => [
+											// 3 => [
+                                            //     "title" => "Products 1",
+                                            //     "url" => base_url("products1"),
+                                            //     "urlKey" => "products1",
+                                            // ],
+                                            3 => [
                                                 "title" => "Contact",
                                                 "url" => base_url("contact-us"),
                                                 "urlKey" => "contact-us",

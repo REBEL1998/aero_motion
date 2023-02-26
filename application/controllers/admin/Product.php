@@ -263,21 +263,24 @@ class Product extends Admin_Controller
 			if (!empty($_FILES['file'])){
 				// for($i = 0; $i<$count ; $i++){
 					if (!empty($_FILES['file']['name'])){
-						$new_name = 'product_img_'.$id. '_' .str_replace(" ","_",$_FILES["file"]['name']);
-			
+						$isImage = strpos($_FILES['file']['type'], 'image') !== false ? true : false;
+						$typex = $isImage ? "IMG" : 'DOC';
+						$new_name = 'product_'.strtolower($typex).'_'.$id. '_' .$_FILES["file"]['name'];
+						$new_name = str_replace(' ', '', $new_name);
+						
 						$config['upload_path']          = './'.PRODUCTMAINIMAGEPATH;
-						$config['allowed_types']        = 'jpeg|jpg|png|pdf|doc';
+						$config['allowed_types']        = 'jpeg|jpg|png|pdf|doc|txt';
 						$config['max_size']             = 10000;
 						$config['file_name']            = $new_name;
 						/* $config['max_width']            = 1024;
 						$config['max_height']           = 768; */
 						$isImage = str_contains( $_FILES['file']['type'], 'image') ? true : false;
-						
+
 						$this->load->library('upload', $config);
 						if (!$this->upload->do_upload('file'))
 						{
 								$error = array('error' => $this->upload->display_errors());
-								echo $error;
+								print_r($error) ;
 								// redirect('admin/product/addedit', 'refresh');
 						}
 						else

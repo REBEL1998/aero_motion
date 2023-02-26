@@ -73,6 +73,7 @@ $route['category/(:any)'] = '/Front_category/index/$1';
 $route['products'] = '/Front_product/index/$1';
 $route['products1'] = '/Front_product/product_demo/$1';
 $route['productDetails/(:any)'] = '/Front_product/product_details/$1';
+$route['admin/create_admin_user'] = 'admin/auth/create_admin_user';
 
 
 // contact us

@@ -650,7 +650,7 @@ h3{
     }
 }
 .slider-area .single-slider{
-    height:760px;
+    height:550px;
     background-size:cover;
     background-position:center;
     display:-webkit-box;
@@ -3788,4 +3788,16 @@ h1,h2,h3,h4,h5,h6{
 .comment-form :-moz-placeholder{
     font-size:13px;
     color:#777
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
 }

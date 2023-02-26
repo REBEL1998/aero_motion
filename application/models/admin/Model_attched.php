@@ -23,7 +23,7 @@ class Model_attched extends CI_Model
 	{
 		$this->db->select([
 			'i.id as recId',
-			'i.relatedid as imgId',
+			'i.relatedid as relatedid',
 			'i.typex as typex',
 			'i.parentcode as parentCode',
 			'i.code as code',
@@ -46,13 +46,29 @@ class Model_attched extends CI_Model
 							$this->db->where('i.typex = ', $value);
 						}	
 					break;
+					case "CODE" :
+						if ( !empty($value) ) {
+							$this->db->where('i.code = ', $value);
+						}	
+					break;
 				}
 			}
 		}	
 		
-		$query=$this->db->get()->result_array(); 
-		
-		return $query;
+		$result = $this->db->get()->result_array(); 
+
+
+
+		if ( !empty($arrParams['flagFormat']) ) {
+			$arrResult = [];
+			foreach($result as $arrTempResult) {
+				$arrResult[$arrTempResult['relatedid']][$arrTempResult['typex']][] = $arrTempResult;
+			}
+
+			return $arrResult;
+		}
+
+		return $result;
 	}
 	
 	//deleteImage

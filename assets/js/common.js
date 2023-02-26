@@ -115,3 +115,9 @@ $(document).ready(function(){
 	});
 });
 
+function setSliderImage( productId = "", index = 0 ){
+	$("#carousel-"+productId + " .carousel-item").removeClass("active");
+	$("#carousel-"+productId + " .sub-carousel-item").removeClass("active");
+	$("#sub-carousel-"+productId + "-"+index).addClass("active");
+	$("#main-carousel-"+productId + "-"+index).addClass("active");
+}

@@ -23,6 +23,17 @@ class Front_product extends Front_Controller {
 		$this->display_template('product',  $this->data);
 	}
 	
+	public function product_demo( $prodUrl = NULL ){
+	
+         // $arrProductData = $this->model_product->getProductList('',['FLAGSTATUS' => 'Y']);
+
+        // $this->data['arrMainProduct'] = $arrMainProduct;
+        // $this->data['arrProductData'] = $arrProductData;
+		// var_dump($this->data);
+		// die();
+		$this->display_template('product1',  []);
+	}
+	
 	public function product_details( $prodId = NULL){
 	
         $arrProductData = $this->model_product->getProductList('',['PRODUCTID' =>$prodId]);

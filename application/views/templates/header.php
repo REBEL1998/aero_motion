@@ -55,7 +55,12 @@
                                                 "url" => base_url("products"),
                                                 "urlKey" => "products",
                                             ],
-                                            3 => [
+											3 => [
+                                                "title" => "Products 1",
+                                                "url" => base_url("products1"),
+                                                "urlKey" => "products1",
+                                            ],
+                                            4 => [
                                                 "title" => "Contact",
                                                 "url" => base_url("contact-us"),
                                                 "urlKey" => "contact-us",

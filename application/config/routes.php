@@ -71,6 +71,7 @@ $route['translate_uri_dashes'] = false;
 $route['technician-setup'] = '/Technician_detail';
 $route['category/(:any)'] = '/Front_category/index/$1';
 $route['products'] = '/Front_product/index/$1';
+$route['products1'] = '/Front_product/product_demo/$1';
 $route['productDetails/(:any)'] = '/Front_product/product_details/$1';
 
 

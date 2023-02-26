@@ -70,6 +70,8 @@ $route['404_override'] = 'Eerror_404';
 $route['translate_uri_dashes'] = false;
 $route['technician-setup'] = '/Technician_detail';
 $route['category/(:any)'] = '/Front_category/index/$1';
+$route['products'] = '/Front_product/index/$1';
+$route['productDetails/(:any)'] = '/Front_product/product_details/$1';
 
 
 // contact us

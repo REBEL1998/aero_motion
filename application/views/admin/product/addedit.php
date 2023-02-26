@@ -53,7 +53,7 @@
 					<label class="col-form-label col-sm-2 text-sm-right">Main Image</label>
 					<div class="col-sm-10">
 						<?php if(!empty($productImage)){ ?>
-							<img src="<?=base_url().'assets/admin/uploads/product/'.$productImage?>"width="100px" height = "100px">
+							<img src="<?=base_url().PRODUCTMAINIMAGEPATH.$productImage?>"width="100px" height = "100px">
 							<a href="<?=base_url('admin/product/')?>deleteimage/<?=$this->atri->en($prodId)?>" class="btn btn-sm btn-danger" >Delete</a>
 						<?php } else{ ?>
 							<input type="file" name="productImage">
@@ -67,8 +67,8 @@
 			<div class="addContact">
 					<?php 
 					
-					if(isset($doAction) && $doAction == 'Edit'){
-							$arrSpecification = json_decode($jsonSpecification,true); 
+					if(isset($doAction) && $doAction == 'Edit' && !empty($jsonSpecification)){
+							$arrSpecification = !empty($jsonSpecification) ? json_decode($jsonSpecification,true) : []; 
 							$count = 1;
 						  foreach($arrSpecification as $key => $value){
 						?>

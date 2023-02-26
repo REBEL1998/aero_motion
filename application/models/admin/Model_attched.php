@@ -19,7 +19,7 @@ class Model_attched extends CI_Model
 		}
 	}
 	
-	public function getAttchedList($prodId = null,$recId = null) 
+	public function getAttchedList($arrParams = []) 
 	{
 		$this->db->select([
 			'i.id as recId',
@@ -32,13 +32,23 @@ class Model_attched extends CI_Model
 		$this->db->from('imgvideodocs as i');
 		$this->db->where('i.flagdelete = ', 'N');
 		$this->db->order_by('i.id', 'DESC');
-
-		if(isset($prodId) && $prodId != ''){
-			$this->db->where('i.relatedid = ', $prodId);
-		}
-		if(isset($recId) && $recId != ''){
-			$this->db->where('i.id = ', $recId);
-		}		
+		
+		if(!empty($arrParams)){
+			foreach ( $arrParams as $key => $value ) {
+				switch( strtoupper($key) ){
+					case "PRODID" :
+						if ( !empty($value) ) {
+							$this->db->where('i.relatedid = ', $value);
+						}	
+					break;
+					case "TYPEX" :
+						if ( !empty($value) ) {
+							$this->db->where('i.typex = ', $value);
+						}	
+					break;
+				}
+			}
+		}	
 		
 		$query=$this->db->get()->result_array(); 
 		
@@ -50,8 +60,10 @@ class Model_attched extends CI_Model
 	public function deleteAttchedImage($recId = null) {
 		
 		/*first get file name based on categoryid*/
-		
-		$arrRslt = $this->getAttchedList(null,$recId);
+		$arrParams = [
+			'RECID' => $recId,
+		];
+		$arrRslt = $this->getAttchedList($arrParams);
 		$prodImageName = $arrRslt[0]['fileName'];
 		
 		if(is_file(FCPATH.'assets\admin\uploads\product\\'.$prodImageName) == true){

@@ -99,3 +99,5 @@ define('PROJECTNAME','MachineAdda.com');
 define('FROMEMAIL','nileshpanchal67@gmail.com');
 
 define('MAXRECORD',9);
+
+define('PRODUCTMAINIMAGEPATH','assets/uploads/products/');

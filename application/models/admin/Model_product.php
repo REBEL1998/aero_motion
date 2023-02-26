@@ -31,22 +31,28 @@ class Model_product extends CI_Model
 			$this->db->where('p.id = ', $prodId);	
 		}
 
-		foreach ( $arrParams as $key => $value ) {
-			switch( strtoupper($key) ){
-				case "CATID" :
-					if ( !empty($value) ) {
-						$this->db->where('p.catId = ', $value);
-					}	
-				break;
-				case "PRODUCTID" :
-					if ( !empty($value) ) {
-						$this->db->where('p.id = ', $value);
-					}	
-				break;
+		if(!empty($arrParams)){
+			foreach ( $arrParams as $key => $value ) {
+				switch( strtoupper($key) ){
+					case "CATID" :
+						if ( !empty($value) ) {
+							$this->db->where('p.catId = ', $value);
+						}	
+					break;
+					case "PRODUCTID" :
+						if ( !empty($value) ) {
+							$this->db->where('p.id = ', $value);
+						}	
+					break;
+					case "FLAGSTATUS" :
+						if ( !empty($value) ) {
+							$this->db->where('p.flagstatus  = ',$value);
+						}	
+					break;
+				}
 			}
 		}
-		
-		$query=$this->db->get()->result_array(); 
+		$query= $this->db->get()->result_array(); 
 		
 		return $query;
 	}

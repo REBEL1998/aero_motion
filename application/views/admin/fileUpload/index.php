@@ -45,7 +45,7 @@
 							<tbody>
 							<?php if($list_data){
 								foreach ($list_data as $key => $value){ 
-								$imageUrl = base_url('assets/admin/uploads/product/').$value['fileName'];
+								$imageUrl = base_url().PRODUCTMAINIMAGEPATH.$value['fileName'];
 								?><tr>
 										<td> <?php echo !empty($value['fileName']) && $value['typex'] == 'IMG' ? '<img src="'.str_replace(" ","_",$imageUrl).'" width="100px" height="100px">' : '<a href="'.$imageUrl.'" target="_blank">Click to view</a>'?></td>
 		

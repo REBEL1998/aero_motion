@@ -74,7 +74,7 @@ class Product extends Admin_Controller
 
 					$new_name = 'product_img_'.$create_id . '_' .$_FILES["productImage"]['name'];
 					
-					$config['upload_path']          = './assets/admin/uploads/product';
+					$config['upload_path']          = './'.PRODUCTMAINIMAGEPATH;
 					$config['allowed_types']        = 'jpg|png|jpeg|';
 					$config['max_size']             = 10000;
 					$config['file_name']            = $new_name;
@@ -177,7 +177,7 @@ class Product extends Admin_Controller
 				if (!empty($_FILES['productImage']['name'])){
 					$new_name = 'product_img_'.$id . '_' .$_FILES["productImage"]['name'];
 		
-					$config['upload_path']          = './assets/admin/uploads/product/';
+					$config['upload_path']          = './'.PRODUCTMAINIMAGEPATH;
 					$config['allowed_types']        = 'jpeg|jpg|png';
 					$config['max_size']             = 10000;
 					$config['file_name']            = $new_name;
@@ -263,9 +263,9 @@ class Product extends Admin_Controller
 			if (!empty($_FILES['file'])){
 				// for($i = 0; $i<$count ; $i++){
 					if (!empty($_FILES['file']['name'])){
-						$new_name = 'product_img_'.$id. '_' .$_FILES["file"]['name'];
+						$new_name = 'product_img_'.$id. '_' .str_replace(" ","_",$_FILES["file"]['name']);
 			
-						$config['upload_path']          = './assets/admin/uploads/product/';
+						$config['upload_path']          = './'.PRODUCTMAINIMAGEPATH;
 						$config['allowed_types']        = 'jpeg|jpg|png|pdf|doc';
 						$config['max_size']             = 10000;
 						$config['file_name']            = $new_name;
@@ -317,7 +317,10 @@ class Product extends Admin_Controller
 		}
 		else {
 			$this->data['doAction'] = 'Edit';
-			$list_data = $this->model_attched->getAttchedList($id);
+			$arrParams = [
+				'productId' => $id
+			];
+			$list_data = $this->model_attched->getAttchedList($arrParams);
 	
 			$this->data['prodId'] = $id;
 			$this->data['list_data'] = $list_data;

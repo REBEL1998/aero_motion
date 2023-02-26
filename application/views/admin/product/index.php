@@ -47,7 +47,7 @@
 							<tbody>
 							<?php if($list_data){
 								foreach ($list_data as $key => $value){ 
-								$imageUrl = base_url('assets/admin/uploads/product/').$value['productImage'];
+								$imageUrl = base_url().PRODUCTMAINIMAGEPATH.$value['productImage'];
 								?><tr>
 										<td> <?php echo !empty($value['productImage']) ? '<img src="'.$imageUrl.'" width="100px" height="100px">' : 'NO Image Found'?></td>
 										<td> <?php echo $value['prodName']; ?></td>

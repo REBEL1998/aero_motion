@@ -274,7 +274,7 @@ class Product extends Admin_Controller
 						$config['file_name']            = $new_name;
 						/* $config['max_width']            = 1024;
 						$config['max_height']           = 768; */
-						$isImage = str_contains( $_FILES['file']['type'], 'image') ? true : false;
+						// $isImage = str_contains( $_FILES['file']['type'], 'image') ? true : false;
 
 						$this->load->library('upload', $config);
 						if (!$this->upload->do_upload('file'))

@@ -113,11 +113,15 @@ $(document).ready(function(){
 	$('.addContact').on('click','#remove',function(){
 		$(this).closest('.contact_incress').remove();
 	});
+
+	
+	CKEDITOR.replace( 'txtShortDesc' );
+
 });
 
 function setSliderImage( productId = "", index = 0 ){
 	$("#carousel-"+productId + " .carousel-item").removeClass("active");
 	$("#carousel-"+productId + " .sub-carousel-item").removeClass("active");
-	$("#sub-carousel-"+productId + "-"+index).addClass("active");
-	$("#main-carousel-"+productId + "-"+index).addClass("active");
+	$("#sub-carousel-"+productId+"-"+index).addClass("active");
+	$("#main-carousel-"+productId+"-"+index).addClass("active");
 }

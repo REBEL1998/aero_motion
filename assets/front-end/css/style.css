@@ -3801,3 +3801,7 @@ input::-webkit-inner-spin-button {
 input[type=number] {
   -moz-appearance: textfield;
 }
+
+ol, ul, dl{
+	margin-bottom : 0rem !important;
+}

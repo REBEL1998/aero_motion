@@ -61,7 +61,7 @@
                                                 foreach($arrImages as $key => $arrTempImg) {
                                                     $active =  $key == 0 ? "active" : "";  
                                                     $tempSubId = "sub-carousel-".$arrTempProduct['prodId']."-".$key;
-                                                    ?><li data-target="<?php echo $tempId; ?>" data-slide-to="<?php echo $key;?>" class="sub-carousel-item w-25 h-auto <?= $active; ?>" id="<?php echo $tempSubId; ?>'" onclick="setSliderImage('<?php echo $arrTempProduct['prodId']; ?>', '<?php echo $key;?>')">
+                                                    ?><li data-target="<?php echo $tempId; ?>" data-slide-to="<?php echo $key;?>" class="sub-carousel-item w-25 h-auto <?= $active; ?>" id="<?php echo $tempSubId; ?>" onclick="setSliderImage('<?php echo $arrTempProduct['prodId']; ?>', '<?php echo $key;?>')">
                                                             <?php if(!empty($arrTempImg['fileName'])){ ?>
                                                                 <img  class="d-block w-50" src="<?=base_url(PRODUCTMAINIMAGEPATH.$arrTempImg['fileName']);?>" alt="Product images"> 
                                                             <?php }?>

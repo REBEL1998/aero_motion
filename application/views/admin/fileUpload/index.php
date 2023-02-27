@@ -26,6 +26,7 @@
 	<div class="form-group row">
 		<div class="col-sm-12 ml-sm-auto mt-3">
 			<a href="<?= base_url('admin/product/attched/').$this->atri->en($prodId);?>" class="btn btn-primary">Upload</a>
+			<a href="<?= base_url('admin/product');?>" class="btn btn-warning">back</a>
 		</div>
 	</div>
 </div>

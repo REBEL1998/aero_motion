@@ -76,9 +76,10 @@
                             <div class="col-lg-7 mt-5">
                                 <div style="display:flex;" > 
                                 <?php  if (!empty($arrDocuments)) { 
+                                    $index = 1;
                                     ?><h5><span class="badge badge-success">Download Specification</span></h5><?php
                                     foreach($arrDocuments as $key => $arrTempDoc) {
-                                        $strIndex= count($arrDocuments) > 1 ? "-" .$key + 1 : "";
+                                        $strIndex= count($arrDocuments) > 1 ? "-" .$index : "";
                                         ?><div class="" style="padding-left:10px">
                                             <h5>
                                                 <a href="<?=base_url(PRODUCTMAINIMAGEPATH.$arrTempDoc['fileName']);?>" download>
@@ -86,6 +87,7 @@
                                                 </a>
                                             </h5>
                                         </div><?php 
+                                        $index++;
                                     }
                                 } ?>
                                 </div>

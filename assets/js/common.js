@@ -114,8 +114,10 @@ $(document).ready(function(){
 		$(this).closest('.contact_incress').remove();
 	});
 
-	
-	CKEDITOR.replace( 'txtShortDesc' );
+	// for product edit case
+	if ( $("#txtShortDesc").length > 0 ) {
+		CKEDITOR.replace( 'txtShortDesc' );
+	}
 
 });
 

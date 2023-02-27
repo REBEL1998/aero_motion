@@ -51,7 +51,7 @@
                     <?php foreach($arrProductData as $arrTempProduct) { ?>
                         <div class="single-project">
                             <div class="project-thumb">
-                                <img src="<?=base_url('assets/admin/uploads/product/'.$arrTempProduct['productImage']);?>" alt="" style="width:350px;height:350px">
+                                <img src="<?=base_url(PRODUCTMAINIMAGEPATH.$arrTempProduct['productImage']);?>" alt="" style="width:350px;height:350px">
                             </div>
                             <div class="project-info">
                                 <span><?php echo $arrTempProduct['catName']; ?></span>

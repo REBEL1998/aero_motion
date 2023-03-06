@@ -22,4 +22,8 @@ class Home extends Front_Controller {
 		
 		$this->display_template('home', $dataSet);
 	}
+
+	public function maintenance(){
+		$this->load->view('maintenance',[]);
+	}
 }

@@ -37,6 +37,8 @@
     </div>
 </div>
 
+<?php /* ?>
+
 <section class="w3l-content-with-photo-6" style="background:#EEEEEE;padding:40px 0;">
        <!-- /content-with-photo -->
            <div class=" container">
@@ -85,34 +87,8 @@
 
       <!-- /content-with-photo -->
 </section>
+<?php */ ?>
 
-
-<section class="w3l-content-with-photo-6" style="margin:20px 0">
-       <!-- /content-with-photo -->
-           <div class="content-with-photo">
-			     <div class="float-lt photo-inn">	
-						<h2>Consectetur Adipisicing elit</h2>
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor </p>
-						<div class="content-w-grids">
-						 <div class="sub-grid">	
-								<h3>Parts and systems</h3>
-								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor.</p>
-						 </div>	 
-						  <div class="sub-grid">	
-						        <h3>Maintenance</h3>
-								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor.</p>
-							
-						 </div>
-						</div>
-			     </div>	 
-				  <div class="float-rt photo-img">
-				    <img src="<?php echo base_url("assets/front-end/images/e5.jpg"); ?>" class="img-responsive" alt="vv">
-				 </div>
-		     
-		   </div>
-
-      <!-- /content-with-photo -->
-</section>
 
 <div class="addres-area black-bg section-padding">
     <div class="container">

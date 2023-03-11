@@ -37,8 +37,8 @@
 					<table id="report-table" class="table table-bordered table-striped mb-0 ">
 							<thead>
 								<tr>
-									<th width="">Name</th>
-									<th width="50%">Short Description</th>
+									<th width="30%">Name</th>
+									<th width="" class="text-center">Short Description</th>
 									<th width="8%" class="text-center" >Status</th>
 									<th class="text-center" width="12%" >Action</th>
 								</tr>
@@ -49,7 +49,28 @@
 								foreach ($list_data as $k => $v){ 
 								?><tr>
 										<td> <?php echo $v['name']; ?></td>
-										<td><?php echo $v['desc']; ?></td>
+										<td class="text-center">
+											<div class="bootstrap-modal">
+												<a data-target="#inquiryModal-<?php echo $v['id']; ?>"   data-toggle="modal" style="cursor: pointer;">
+													<span class="tag badge badge-warning">View Description</span>
+												</a>
+												<div class="modal fade" id="inquiryModal-<?php echo $v['id']; ?>" style="display: none;" aria-hidden="true">
+													<div class="modal-dialog modal-dialog-centered" role="document">
+														<div class="modal-content">
+															<div class="modal-header">
+																<h5 class="modal-title">Short Description</h5>
+																<button type="button" class="close" data-dismiss="modal"><span>×</span></button>
+															</div>
+															<div class="modal-body">
+																<div id="inquiryMessage" style="text-align: left; white-space: pre-wrap; word-break: break-word;" >
+																	<?php echo ($v['desc']); ?>
+																</div>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</td>
 										<td class="text-center">
 											<?php $statusClass = $v['status'] == 'Y' ? "success" : "danger" ;?>
 											<span class="tag badge badge-<?php echo $statusClass; ?>"><a href="<?php echo base_url('admin/category/status/'.$this->atri->en($v['id']).'/'.$this->uri->segment('4')) ?>" style="color:white;"><?php echo $arrStatus[$v['status']]; ?></a></span>

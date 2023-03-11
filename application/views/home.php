@@ -10,29 +10,10 @@
 </div>
 
 
-<div class="about-area section-padding">
-    <div class="container">
-        <div class="row align-items-center">
-            <div class="col-xl-8 col-md-12 col-lg-6">
-                <div class="section-title mb-65 p-0">
-                    <h3>AERO Motion Control</h3>
-                    <p class="para-text">Aero Motion worked more than 10 Years' Industrial Automation R&D Experiences, More than 20% of Revenue Invested in R&D, Aero Motion is focuses on the development of servo motor, servo driver, stepper motor, stepper driver, spindle, CNC system products and sales. This mainly division of Motion control and Automation control solutions. </p>
-
-                    <p class="para-text">
-                Aero Motion’s all products are mainly applied for Precision Application like Electronics and Semiconductors, CNC (Laser, Plasma, Water Jet, Cutting, Milling, Engraving, Polishing, Positioning, etc.), Medical, Aerospace, Test Bed, packaging (Marking, Labelling, Feeding, etc.), Sewing, Printing, Textile, Fabrication, Surveillance, Logistics, Factory Automation, Sorting, Farming, Robotics, Printing, Automotive, Telecom, SPM Machine Application etc.
-                    </p>
-                </div>
-            </div>
-            <div class="col-xl-4 col-md-12 col-lg-6">
-                <div class="about-thumb">
-                    <img src="<?php echo base_url("assets/front-end/img/logo.png"); ?>" alt="">
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
-
+<?php 
+// company inrtoductions
+$this->load->view('templates/company-introduction',[]);
+?>
 
 <div class="project-area bg-img-2 overlay">
     <div class="container-fluid p-lg-0">

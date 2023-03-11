@@ -4,8 +4,7 @@
                     <div class="col-sm-6 col-md-3 col-xl-4">
                         <div class="single-footer-widget footer_1">
                             <a href="index.html"> <img src="<?php echo base_url("assets/front-end/img/footer-logo.png"); ?>" alt="" style="width:300px;"> </a>
-                            <p>Waters make fish every without firmament saw had. Morning air subdue very one. Whales grass
-                                is fish whales winged.
+                            <p> Aero Motion worked more than 10 Years' Industrial Automation. Aero Motion is focuses on the development of servo motor, servo driver, stepper motor, stepper driver.
                             </p>
                             <div class="social-links">
                                 <ul>

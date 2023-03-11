@@ -16,11 +16,10 @@
             <div class="col-xl-8 col-md-12 col-lg-6">
                 <div class="section-title mb-65 p-0">
                     <h3>AERO Motion Control</h3>
-                    <p class="para-text">
-                    Established as a Sole Proprietorship firm in the year 2019 at Ahmedabad (Gujarat, India), we “Star Motion Control” are a leading Wholesale Trader of a wide range of DSP Controller, AC Gear Motors, Drag Chain, etc. We procure these products from the most trusted and renowned vendors after stringent market analysis.</p>
+                    <p class="para-text">Aero Motion worked more than 10 Years' Industrial Automation R&D Experiences, More than 20% of Revenue Invested in R&D, Aero Motion is focuses on the development of servo motor, servo driver, stepper motor, stepper driver, spindle, CNC system products and sales. This mainly division of Motion control and Automation control solutions. </p>
 
-                <p class="para-text">
-                    Further, we offer these products at reasonable rates and deliver these within the promised time-frame. Under the headship of “Mr. Nikunj Korat” (Manager), we have gained a huge clientele across the nation.
+                    <p class="para-text">
+                Aero Motion’s all products are mainly applied for Precision Application like Electronics and Semiconductors, CNC (Laser, Plasma, Water Jet, Cutting, Milling, Engraving, Polishing, Positioning, etc.), Medical, Aerospace, Test Bed, packaging (Marking, Labelling, Feeding, etc.), Sewing, Printing, Textile, Fabrication, Surveillance, Logistics, Factory Automation, Sorting, Farming, Robotics, Printing, Automotive, Telecom, SPM Machine Application etc.
                     </p>
                 </div>
             </div>
@@ -54,7 +53,7 @@
                                 <img src="<?=base_url(PRODUCTMAINIMAGEPATH.$arrTempProduct['productImage']);?>" alt="" style="width:350px;height:350px">
                             </div>
                             <div class="project-info">
-                                <span><?php echo $arrTempProduct['catName']; ?></span>
+                                <span style="color:white;"><?php echo $arrTempProduct['catName']; ?></span>
                                 <h3><?php echo $arrTempProduct['prodName']; ?></h3>
                             </div>
                         </div>
